@@ -58,3 +58,24 @@ console.log(typeof('1' + 0)); // string
 console.log('string' - 0); // NaN
 console.log('9' - 5); // 4
 console.log(typeof('9' - 5)); // number
+
+// Real Number(Floting point) operations on computers have small accuracy erros
+console.log(0.5 + 0.5); // 1
+console.log(0.1 + 0.2); // 0.30000000000000004 // Due to the fact that computer knows 0 and 1 only.
+console.log((0.1 * 10 + 0.2 * 10) / 10); // 0.3
+
+// boolean
+console.log(true, false);
+console.log(typeof(true)); // Boolean
+console.log(NaN == NaN); // false
+console.log(NaN != NaN); // true
+console.log(true > false); // true // true is 1, false is 0
+
+// == vs. ===
+console.log('1' == 1); // true
+console.log(1 == true); // true
+console.log(1 != '1'); // false
+
+console.log('1' === 1); // false
+console.log(1 === true); // false
+console.log(1 !== '1'); // true
