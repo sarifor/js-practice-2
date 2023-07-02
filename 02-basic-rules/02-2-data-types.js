@@ -18,3 +18,15 @@ console.log(``);
 console.log(`backtick(\`) is in string`);
 console.log(`Good
 Night!`);
+
+// number
+console.log(2023);
+console.log(-5);
+
+// exponential notation
+console.log(5e4); // 5 * 10000 = 50000
+console.log(5e+4); // 5 * 10000 = 50000
+console.log(5e-3); // 5 * (1/1000) = 0.005
+
+// not number
+console.log('5');
