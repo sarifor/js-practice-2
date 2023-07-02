@@ -87,3 +87,18 @@ console.log(Boolean(0)); // false
 console.log(Boolean(NaN)); // false
 console.log(Boolean(undefined)); // false
 console.log(Boolean(null)); // false
+
+// undefined
+console.log(Boolean(undefined)); // false
+console.log(undefined == false); // false
+console.log(undefined == 0); // false
+console.log(undefined == ''); // false
+console.log(typeof undefined); // undefined
+
+// null
+console.log(undefined == null); // true
+console.log(undefined === null); // false
+console.log(null == false); // false
+console.log(null == 0); // false
+console.log(null == ''); // false
+console.log(typeof null); // object // should have been 'null'
