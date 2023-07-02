@@ -80,7 +80,7 @@ console.log('1' === 1); // false
 console.log(1 === true); // false
 console.log(1 !== '1'); // true
 
-// Boolean
+// Logical operators
 console.log(Boolean(false)); // false
 console.log(Boolean('')); // false
 console.log(Boolean(0)); // false
