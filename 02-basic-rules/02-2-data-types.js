@@ -30,3 +30,12 @@ console.log(5e-3); // 5 * (1/1000) = 0.005
 
 // not number
 console.log('5');
+
+// string to number
+console.log(typeof parseInt('5')); // number
+
+// Integers
+console.log(parseInt('4.8')); // 4
+
+// Real numbers
+console.log(parseFloat('4.8')); // 4.8
