@@ -39,3 +39,22 @@ console.log(parseInt('4.8')); // 4
 
 // Real numbers
 console.log(parseFloat('4.8')); // 4.8
+
+// NaN(Not a Number)
+console.log(parseInt("abcd")); // NaN
+console.log(typeof NaN); // number
+
+// Infinity
+console.log(2 / 0) // Infinity
+console.log(typeof Infinity); // number
+console.log(Infinity - Infinity); // NaN
+console.log(0 / 0); // NaN
+
+// type casting
+console.log('string' + 0); // string0
+console.log(typeof('string' + 0)); // string
+console.log('1' + 0); // 10
+console.log(typeof('1' + 0)); // string
+console.log('string' - 0); // NaN
+console.log('9' - 5); // 4
+console.log(typeof('9' - 5)); // number
