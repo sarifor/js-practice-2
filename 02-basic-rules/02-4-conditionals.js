@@ -1,0 +1,31 @@
+// If statement
+if (0) { // false
+  console.log('Hello, if!');
+}
+
+// Switch
+let value = 'B';
+switch (value) {
+  case 'A':
+    console.log('A');
+    break;
+  case 'B':
+    console.log('B');
+    break; // If no break here, case 'C' is also executed.
+  case 'C':
+    console.log('C');
+    break;
+  default:
+    console.log('Nothing is matched');
+}
+
+// conditional operator '?'
+console.log(5 > 0 ? 'True' : 'False');
+
+let value2 = 5 < 0 ? 'True' : 'False';
+console.log(value2);
+
+let condition1 = true;
+let condition2 = false;
+let value3 = condition1 ? (condition2 ? 'Both true' : 'Only condition1 is true') : 'condition1 is false';
+console.log(value3);
