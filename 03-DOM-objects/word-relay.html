@@ -14,10 +14,16 @@
       const number = prompt('How many people will participate in this relay?');
       const $input = document.querySelector('input');
       const $$buttons = document.querySelectorAll('button'); // Spefific tag by tag
-      const $button = document.querySelector('button'); // 1st one
+      // const $button = document.querySelector('button'); // 1st one
       const $order = document.querySelector('#order'); // Specific tag by id
       const $buttonGroup = document.querySelectorAll('.buttonGroup'); // Multiple tags by class
       const $span = document.querySelector('div span'); // Tag in tag by tag
+
+      const onClickButton = () => { // Callback function
+        console.log("Click button");
+      };
+      const $button = document.querySelector('button');
+      $button.addEventListener('click', onClickButton); // Allow JS to detect event on HTML
     </script> 
   </body>
 
