@@ -22,6 +22,8 @@
           word = newWord;
           $word.textContent = word;
         }
+        $input.value = '';
+        $input.focus();
       };
       $button.addEventListener('click', onClickButton); // Allow JS to detect event on HTML
 
