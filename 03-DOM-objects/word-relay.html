@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    <div><span id="order">1</span>th participant</div>
+    <div>Word: <span id="word"></span></div>
+    <input type="text">
+    <button class="buttonGroup">Submit</button>
+    <button class="buttonGroup">Submit2</button>
+
+    <script>
+      const number = prompt('How many people will participate in this relay?');
+      const $input = document.querySelector('input');
+      const $$buttons = document.querySelectorAll('button'); // Spefific tag by tag
+      const $button = document.querySelector('button'); // 1st one
+      const $order = document.querySelector('#order'); // Specific tag by id
+      const $buttonGroup = document.querySelectorAll('.buttonGroup'); // Multiple tags by class
+      const $span = document.querySelector('div span'); // Tag in tag by tag
+    </script> 
+  </body>
+
+</html>
