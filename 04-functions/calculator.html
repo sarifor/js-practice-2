@@ -87,16 +87,9 @@
     document.querySelector('#multiply').addEventListener('click', onClickOperator('*'));
     document.querySelector('#calculate').addEventListener('click', () => {
       if (numTwo) { // numTwo의 값이 있을 때만 연산을 수행한다.
-        switch (operator) {
-          case '+':
-            $result.value = parseInt(numOne) + parseInt(numTwo);
-            break;
-          case '-':
-            $result.value = praseInt(numOne) - parseInt(numTwo);
-            break;
-        }
+        $result.value = eval(numOne + operator + numTwo); // eval function allows to execute a string of code.
       } else {
-        alert('Input number first');
+        eval("alert('Input number first');");
       }
     });
 
