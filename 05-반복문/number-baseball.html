@@ -31,7 +31,7 @@
     if (input.length !== 4) {
       return alert('4자리 숫자를 입력해 주세요.');
     }
-    if (new Set(input).size !== 4) { // new Set(variable)
+    if (new Set(input).size !== 4) { // If input 1121, {'1', '2'} returned.
       return alert('중복되지 않게 입력해 주세요.');
     }
     if (tries.includes(input)) { // array.includes(variable)
