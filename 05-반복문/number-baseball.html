@@ -20,9 +20,9 @@
   }
   const answer = [];
   for (let n = 0; n < 4; n += 1) {
-    const index = Math.floor(Math.random() * numbers.length);
+    const index = Math.floor(Math.random() * numbers.length); // Math.floor(), Math.random()
     answer.push(numbers[index]);
-    numbers.splice(index, 1);
+    numbers.splice(index, 1); // Remove selected number
   }
   console.log(answer);
 
@@ -31,10 +31,10 @@
     if (input.length !== 4) {
       return alert('4자리 숫자를 입력해 주세요.');
     }
-    if (new Set(input).size !== 4) {
+    if (new Set(input).size !== 4) { // new Set(variable)
       return alert('중복되지 않게 입력해 주세요.');
     }
-    if (tries.includes(input)) {
+    if (tries.includes(input)) { // array.includes(variable)
       return alert('이미 시도한 값입니다.');
     }
     return true;
@@ -45,16 +45,16 @@
     const value = $input.value;
     $input.value = '';
     if (!checkInput(value)) {
-      return;
+      return; // return undefined?
     }
     
-    if (answer.join('') === value) {
+    if (answer.join('') === value) { // array.join()
       $logs.textContent = '홈런!';
       return;
     }
     if (tries.length >= 9) {
-      const message = document.createTextNode(`패배! 정답은 ${answer.join('')}`);
-      $logs.appendChild(message);
+      const message = document.createTextNode(`패배! 정답은 ${answer.join('')}`); // document.createTextNode()
+      $logs.appendChild(message); // element.appendChild()
       return;
     }
   
@@ -62,7 +62,7 @@
     let ball = 0;
 
     for (let i = 0; i < answer.length; i++) {
-      const index = value.indexOf(answer[i]);
+      const index = value.indexOf(answer[i]); // string.indexOf()
       if (index > -1) {
         if (index === i) {
           strike += 1;
@@ -71,7 +71,7 @@
         }
       }
     }
-    $logs.append(`${value}: ${strike} 스트라이크 ${ball} 볼`, document.createElement('br'));
+    $logs.append(`${value}: ${strike} 스트라이크 ${ball} 볼`, document.createElement('br')); // element.append(), document.createElement()
     tries.push(value);
   });
 </script>
