@@ -46,22 +46,41 @@
     const $operator = document.querySelector('#operator');
     const $result = document.querySelector('#result');
 
-    document.querySelector("#num-0").addEventListener('click', () => { // Same with below func except for '0'
-      if (operator) {
-        numTwo += '0';
-      } else {
-        numOne += '0';
-      }
-      $result.value += '0';
-    });
 
-    document.querySelector("#num-1").addEventListener('click', () => {
+    // 고차 함수
+    const onClickNumber = (number) => () => { // 숫자 부분이 다름 -> 고차 함수 사용
       if (operator) {
-        numTwo += '1';
+        numTwo += number;
       } else {
-        numOne += '1';
+        numOne += number;
       }
-      $result.value += '1';
-    });
+      $result.value += number;
+    };
+
+    /* const onClickNumber = (number) => { // 이렇게도 할 수 있지 않나? 왜 굳이 고차 함수를 쓰는 걸까?
+      if (operator) {
+        numTwo += number;
+      } else {
+        numOne += number;
+      }
+      $result.value += number;
+    } */ 
+
+    document.querySelector("#num-0").addEventListener('click', onClickNumber('0'));
+    document.querySelector("#num-1").addEventListener('click', onClickNumber('1'));
+
+
+    // 고차 함수 X
+    const onClickNumber2 = (event) => { // 숫자들의 공통점을 찾아 숫자 부분을 같게 함 -> 고차 함수 사용 X
+      if (operator) {
+        numTwo += event.target.textContent;
+      } else {
+        numOne += event.target.textContent;
+      }
+      $result.value = event.target.textContent;
+    };
+
+    document.querySelector("#num-0").addEventListener('click', onClickNumber);
+    document.querySelector("#num-1").addEventListener('click', onClickNumber);    
   </script>
 </body>
