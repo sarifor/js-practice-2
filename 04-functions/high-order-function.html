@@ -1,0 +1,22 @@
+<html>
+  <script>
+    const func = (msg) => {
+      return () => { // Return function
+        console.log(msg);
+      };
+    };
+
+    const innerFunc1 = func('Hello');
+    const innerFunc2 = func('Summer!');
+    innerFunc1(); // Hello
+    innerFunc2(); // Summer!
+
+    const func1 = (msg) => () => { // Changed to arrow function
+      console.log(msg);
+    }
+
+    const innerFunc3 = func1('Good Night!');
+    innerFunc3(); // Good Night!
+
+  </script>
+</html>
