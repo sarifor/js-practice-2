@@ -1,0 +1,20 @@
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<form id="form">
+  <input type="text" id="input">
+  <button>Check</button>
+</form>
+<div id="logs"></div>
+<script>
+  const $logs = document.querySelector("#logs");
+  const msg = document.createTextNode('text 1');
+  $logs.appendChild(msg); // Shown
+  $logs.appendChild("text 2"); // Not shown
+  $logs.append("text 3"); // Not shown
+  $logs.append("text 4"); // Not shown
+</script>
+</body>
+</html>
