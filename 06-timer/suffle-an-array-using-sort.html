@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // Suffle an array using array.sort()
+  let arr = [1, 2, 3];
+
+  function suffle(array) {
+    array.sort(() => Math.random() - 0.5); // 계산 결과는 양수나 음수 둘 중 하나이기 때문에, 정렬 함수는 요소를 무작위로 재정렬해 줌.
+  }
+  let arr2 = [1, 2, 3];
+  suffle(arr);
+  console.log(arr);
+
+
+  // *위의 코드는 숫자 1, 2, 3으로 만들 수 있는 순열이 같은 빈도로 나타나지 않는다.
+  // 함수 suffle2를 백만 번 실행시키고, 만들 수 있는 순열의 모든 빈도를 세서 출력해 보자.
+  function shuffle2(array3) {
+    array3.sort(() => Math.random() - 0.5);
+  }
+
+  let count = {
+    '123': 0,
+    '132': 0,
+    '213': 0,
+    '231': 0,
+    '321': 0,
+    '312': 0
+  };
+
+  for (let i = 0; i < 1000000; i++) {
+    let array3 = [1, 2, 3];
+    shuffle2(array3);
+    count[array3.join('')]++;
+  }
+
+  for (let key in count) {
+    console.log(`${key}: ${count[key]}`);
+  } /* 순열 간의 빈도 차이가 많이 난다.
+    123: 375183
+    132: 62689
+    213: 125527
+    231: 62443
+    312: 62246
+    321: 311912
+  */
+</script>
+</body>

@@ -23,7 +23,7 @@
 <script>
   const candidate = Array(45).fill().map((v, i) => i + 1);
   const shuffle = [];
-  while (candidate.length > 0) {
+  while (candidate.length > 0) { // candidate 배열에서 무작위로 뽑은 숫자를, shuffle 배열로 하나씩 옮긴다. (Fisher-Yates Shuffle Algorithm)
     const random = Math.floor(Math.random() * candidate.length);
     const spliceArray = candidate.splice(random, 1);
     const value = spliceArray[0];

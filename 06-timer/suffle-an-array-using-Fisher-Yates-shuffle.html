@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // Suffle an array using Fisher-Yates-shuffle algorithm
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  let count = {
+    '123': 0,
+    '132': 0,
+    '213': 0,
+    '231': 0,
+    '321': 0,
+    '312': 0
+  };
+
+  for (let i = 0; i < 1000000; i++) {
+    let array = [1, 2, 3];
+    shuffle(array);
+    count[array.join('')]++;
+  }
+
+  for (let key in count) {
+    console.log(`${key}: ${count[key]}`);
+  } /* 모든 순열이 거의 유사한 빈도로 만들어졌다.
+    123: 167020
+    132: 166681
+    213: 166503
+    231: 165859
+    312: 167126
+    321: 166811
+  */  
+</script>
+</body>

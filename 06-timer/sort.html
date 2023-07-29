@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // sort()
+  let arr = [ 1, 2, 15 ];
+  arr.sort();
+  console.log(arr); // [ 1, 15, 2 ] // Sorted as String
+
+
+  // sort(compreFunction)
+  let arr2 = [ 1, 2, 15 ];
+  arr2.sort(function(a, b) { // Sorted in acsending order
+    return a - b;
+  });
+  console.log(arr2);
+
+</script>
+</body>
