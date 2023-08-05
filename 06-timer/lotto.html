@@ -52,8 +52,13 @@
     $parent.appendChild($ball);
   };
 
-  for (let i = 0; i < winBalls.length; i++) {
+  /* var를 쓰면 반복문이 콜백 함수와 맞춰 돌지 않는다.
+  콜백 함수가 실행될 때는 이미 i가 6이 되어 있다.
+  반면 for 문에서 let을 쓰면 하나의 블록마다 i가 고정된다.
+  따라서 콜백 함수 내부의 i도 setTimeout을 호출할 때와 같은 i가 들어간다. */
+  for (var i = 0; i < winBalls.length; i++) {
     setTimeout(() => {
+      console.log(winBalls[i], i); // undefined 6
       drawBall(winBalls[i], $result);
     }, (i + 1) * 1000);
   }
