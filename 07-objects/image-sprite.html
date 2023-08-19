@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Practice</title>
+    <style>
+      #sanrio {
+        width: 296px;
+        height: 195px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="sanrio"></div>
+    <script>
+      const $sanrio = document.querySelector("#sanrio");
+      const IMG_URL = './sanrio.png';
+      $sanrio.style.background = `url(${IMG_URL}) -296px 0`; // x, y
+      $sanrio.style.backgroundSize = 'auto 195px' // width, height
+
+      const sanrioX = {
+        devil: '0',
+        kitty: '-296px',
+        rabbit: '-592px',
+        puppy: '-888px',
+      }
+    </script>
+  </body>
+</html>
