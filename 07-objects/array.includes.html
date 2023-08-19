@@ -12,6 +12,11 @@
         console.log(`${number} is included!`); // 1 is included
       }
 
+      // 'Includes' is simpler than '||'
+      if(number === 1 || number === 5) {
+        console.log(`${number} is included!`); // 1 is included!
+      }
+
       // Can detect NaN
       console.log([2, 6].includes(6)); // true
       console.log([NaN, 7].includes(NaN)); // true
