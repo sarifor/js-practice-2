@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Practice</title>
+  </head>
+
+  <body>
+    <button id="btn">Button</div>
+    <script>
+      const $button = document.querySelector('#btn');
+      const greetings = () => console.log("Ohayo");
+      let intervalId = setInterval(greetings, 1000);
+
+      const clickButton = (event) => {
+        clearInterval(intervalId)
+      };
+
+      $button.addEventListener('click', clickButton);
+    </script>
+  </body>
+</html>
