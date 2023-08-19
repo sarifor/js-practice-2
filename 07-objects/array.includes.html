@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Practice</title>
+  </head>
+
+  <body>
+    <script>
+      // Normal usage
+      const number = 1;
+      if([1, 5].includes(number)) {
+        console.log(`${number} is included!`); // 1 is included
+      }
+
+      // Can detect NaN
+      console.log([2, 6].includes(6)); // true
+      console.log([NaN, 7].includes(NaN)); // true
+    </script>
+  </body>
+</html>
