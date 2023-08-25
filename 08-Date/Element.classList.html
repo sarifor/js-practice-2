@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+<style>
+  #testDiv {
+    width: 100px;
+    height: 100px;
+  }
+  #testButton {
+    width: 50px;
+    height: 50px;
+  }
+  #testDiv.red {
+    background-color: red;
+  }
+  #testDiv.orange {
+    background-color: orange;
+  }
+</style>
+</head>
+
+<body>
+  <div id = "testDiv", class="red"></div>
+  <button id = "testButton">Click!</button>
+  <script>
+    const div = document.querySelector('#testDiv')
+    const button = document.querySelector('#testButton');
+
+    button.addEventListener('click', () => { // remove, add, contains
+      div.classList.remove("red");
+      div.classList.add("orange");
+      if (div.classList.contains("orange")) {
+        console.log(`${div.className} is used.`);
+      }
+    })
+  </script>
+</body>
+</html>
