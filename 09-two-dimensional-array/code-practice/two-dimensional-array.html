@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Two-dimensional array</title>
+<style>
+  table {
+    border-collapse: collapse;
+  }
+
+  td {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <!--Draw a table by tr/td tags-->
+  <table>
+    <tr><!--tr represents row-->
+      <td id="td00"></td>
+      <td id="td01">X</td>
+      <td id="td02"></td>
+    </tr>
+    <tr>
+      <td id="td10">O</td>
+      <td id="td11"></td>
+      <td id="td12">O</td>
+    </tr>
+    <tr>
+      <td id="td20"></td>
+      <td id="td21">O</td>
+      <td id="td22">X</td>
+    </tr>
+  </table>
+
+  <!--Draw a table by nested for-statement-->
+  <script>
+    const { body } = document;
+    const $tb = document.createElement('table');
+    const rows = [];
+
+    // Create table in both array and tags
+    for (let i = 1; i <= 3; i++) { // i for row, j for column
+      const $tr = document.createElement('tr');
+      const cells = [];
+      for (let j = 1; j <= 3; j++) {
+        const $td = document.createElement('td');
+        $tr.appendChild($td); // <tr><td><td><td></tr>
+        cells.push($td); // [td, td, td]
+      }
+      $tb.appendChild($tr);
+      rows.push(cells);      
+    }
+    body.appendChild($tb);
+    console.log(rows);
+  </script>
+</body>
+</html>
