@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Children(child node)</title>
+  </head>
+
+  <body>
+    <form id="form">FORM
+      <div>DIV
+        <p>P</p>
+      </div>
+      <div>DIV 2
+        <p>P 2</p>
+      </div>
+    </form>  
+    <script>
+      // Print all of childNodes
+      console.log("---- all of childNodes ----")
+      for (let i = 0; i < document.body.childNodes.length; i++) {
+        console.log( document.body.childNodes[i] ); // Print to ＜/script＞
+      }
+
+      // childNodes is iterable, which has Symbol.iterator
+      console.log("---- document.body.childNodes ----");
+      console.log(document.body.childNodes); // Includes 'Symbol(Symbol.iterator): ƒ values()'
+
+      // childNodes is iterable, so can use 'for..of'
+      console.log("---- for..of is used ----");
+      for (let node of document.body.childNodes) {
+        console.log(node);
+      }
+
+      // Do not use 'for..in' to childNodes as it prints unnecessary properties, too.
+      console.log("---- for..in is used ----")
+      for (let prop in document.body.childNodes) {
+        console.log(prop); // 0, 1, 2, 3, entries, keys, values ...
+      }
+
+    </script>
+    This sentence is not printed because browser can't read it when the above script is executed.
+  </body>
+</html>

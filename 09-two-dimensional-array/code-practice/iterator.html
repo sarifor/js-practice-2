@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Iterator</title>
+  </head>
+
+  <body>
+    <script>
+      const arr = [1, 2, 3];
+      const iter = arr[Symbol.iterator](); // iterator is a method that returns the default iterator for an object. Called by the semantics of the for-of statement.
+
+      console.log(iter); // Shows 'next: ƒ next()'
+      console.log(iter.next()); // {value: 1, done: false}
+      console.log(iter.next()); // {value: 2, done: false}
+      console.log(iter.next()); // {value: 3, done: false}
+      console.log(iter.next()); // {value: 3, done: false}
+    </script>
+  </body>
+</html>

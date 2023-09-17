@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DOM Event Flow</title>
+  </head>
+
+  <body>
+    <form id="form">FORM
+      <div>DIV
+        <p>P</p>
+      </div>
+    </form>  
+    <script>
+      const $form = document.querySelector('form');
+      $form.onclick = function(event) {
+        alert(`${event.target.tagName}'s parent is ${event.target.parentNode.tagName}`);
+      };
+    </script>
+  </body>
+</html>

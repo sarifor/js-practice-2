@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Array-like</title>
+  </head>
+
+  <body>
+    <script>
+      // Array-like
+      let arrayLike = { // Has index and length property like array.
+        0: "Hello",
+        1: "World",
+        length: 2,
+      };
+
+      console.log(arrayLike.__proto__); // // Not shows 'Symbol(Symbol.iterator): ƒ values()', which means, arrayLike is not iterable.
+
+      // arrayLike.push("3"); // Uncaught TypeError: arrayLike.push is not a function
+
+      /* for (let item of arrayLike) { // Uncaught TypeError: arrayLike is not iterable
+        console.log(item);
+      } */
+
+      // Array
+      let arr = Array.from(arrayLike);
+      for (let item of arr) {
+        console.log(item); // Hello World
+      }
+    </script>
+  </body>
+</html>

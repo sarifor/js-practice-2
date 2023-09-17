@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Stop Bubbling(Propagation)</title>
+  </head>
+
+  <body>
+    <!--Bubbling works-->
+    <form onclick="alert(`Hi!`)">
+      <button>Click</button>
+    </form>
+
+    <!--Bubbling is stopped-->
+    <form onclick="alert(`Bye!`)">
+      <button onclick="event.stopPropagation()">Click!</button>
+    </form>
+  </body>
+</html>

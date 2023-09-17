@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DOM Event Flow</title>
+    <style>
+      body * {
+        margin: 10px;
+        border: 1px solid blue;
+      }  
+    </style>
+  </head>
+
+  <body>
+    <form>FORM
+      <div>DIV
+        <p>P</p>
+      </div>
+    </form>
+
+    <script>
+      /* 
+        If p is clicked, event flow is as below:
+        1. HTML -> BODY -> FORM -> DIV (Capturing),
+        2. P (Target),
+        3. DIV -> FORM -> BODY -> HTML (Bubbling)
+      */ 
+      for(let elem of document.querySelectorAll('*')) {
+        elem.addEventListener("click", e => alert(`Capturing: ${elem.tagName}`), true);
+        elem.addEventListener("click", e => alert(`Bubbling: ${elem.tagName}`));
+      }
+    </script>
+  </body>
+</html>

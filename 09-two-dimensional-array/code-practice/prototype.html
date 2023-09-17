@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Prototype</title>
+  </head>
+
+  <body>
+    <script>
+      let animal = {
+        eats: true,
+      };
+      let rabbit = {
+        jumps: true,
+      };
+
+      rabbit.__proto__ = animal; // Set animal as rabbit's prototype
+
+      alert( rabbit.eats ); // true // inherited property
+      alert( rabbit.jumps ); // true
+      alert( animal.jumps ); // undefined
+    </script>
+  </body>
+</html>

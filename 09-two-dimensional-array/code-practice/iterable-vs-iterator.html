@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Iterable vs. Iterator</title>
+  </head>
+
+  <body>
+    <script>
+      // Iterable has Symbole.iterator, and iterator has next() method.
+      // "next() 메서드 내부에 처리를 추가함으로, 배열 순환 시의 리턴값에 영향을 줄 수 있다.""
+      let range = { // iterable
+        from: 1,
+        to: 5
+      };
+
+      range[Symbol.iterator] = function() { // Symbol.iterator
+        return { // iterator
+          current: this.from,
+          last: this.to,
+
+          next() { // next() method
+            if (this.current <= this.last) {
+              return { done: false, value: this.current++ };
+            } else {
+              return { done: true };
+            }
+          }
+        }
+      }
+      
+      for (let num of range) {
+        alert(num); // 1 2 3 4 5
+      }
+    </script>
+  </body>
+</html>
