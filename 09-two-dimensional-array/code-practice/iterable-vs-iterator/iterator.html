@@ -10,7 +10,7 @@
       const arr = [1, 2, 3];
       const iter = arr[Symbol.iterator](); // iterator is a method that returns the default iterator for an object. Called by the semantics of the for-of statement.
 
-      console.log(iter); // Shows 'next: ƒ next()'
+      console.log(iter); // Has 'next: ƒ next()'
       console.log(iter.next()); // {value: 1, done: false}
       console.log(iter.next()); // {value: 2, done: false}
       console.log(iter.next()); // {value: 3, done: false}
