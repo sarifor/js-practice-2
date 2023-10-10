@@ -48,7 +48,7 @@
 
 
     // 고차 함수
-    const onClickNumber = (number) => () => { // 숫자 부분이 다름 -> 고차 함수 사용
+    const onClickNumber = (number) => () => { // 숫자 부분이 다름(number) -> 고차 함수 사용
       if (operator) {
         numTwo += number;
       } else {
@@ -71,7 +71,7 @@
 
 
     // 고차 함수 X
-    const onClickNumber2 = (event) => { // 숫자들의 공통점을 찾아 숫자 부분을 같게 함 -> 고차 함수 사용 X
+    const onClickNumber2 = (event) => { // 숫자들의 공통점을 찾아 숫자 부분을 같게 함(event.target.textContent) -> 고차 함수 사용 X
       if (operator) {
         numTwo += event.target.textContent;
       } else {
