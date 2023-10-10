@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+<style>
+  #testDiv {
+    width: 100px;
+    height: 100px;
+  }
+  #testButton {
+    width: 50px;
+    height: 50px;
+  }
+  #testDiv.red {
+    background-color: red;
+  }
+  #testDiv.orange {
+    background-color: orange;
+  }
+  #testDiv.aquamarine {
+    background-color: aquamarine;
+  }  
+</style>
+</head>
+
+<body>
+  <div id = "testDiv", class="red"></div>
+  <button id = "testButton">Click!</button>
+  <button id = "testButton2">Click!!</button>
+  <script>
+    const div = document.querySelector('#testDiv')
+    const button = document.querySelector('#testButton');
+    const button2 = document.querySelector('#testButton2');
+
+    // elm.className
+    button2.addEventListener('click', () => {
+      div.className = "aquamarine";
+      if (div.className === "aquamarine") {
+        console.log(`${div.className} is used.`); // aquamarine is used.
+      }
+    })
+
+    // elm.classList.add
+    button.addEventListener('click', () => {
+      // div.classList.remove("red");
+      div.classList.add("orange");
+      if (div.classList.contains("orange")) {
+        console.log(`${div.className} is used.`); // red orange is used.
+      }
+    })
+  </script>
+</body>
+</html>
