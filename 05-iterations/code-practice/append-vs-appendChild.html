@@ -1,0 +1,34 @@
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+<form id="form">
+  <input type="text" id="input">
+  <button>Check</button>
+</form>
+<div id="logs"></div>
+<div id="logs2"></div>
+<div id="logs3"></div>
+<div id="logs4"></div>
+
+<script>
+  // append()
+  const $logs = document.querySelector("#logs");
+  const $logs2 = document.querySelector("#logs2");
+  const msg = document.createTextNode('text 1');
+  $logs.append(msg); // Node can be used
+  $logs2.append('text 2'); // Text can be used
+  $logs.append('text 3', 'text 4', 'text 5'); // Several input can be used
+  console.log($logs.append('text 6')); // undefined
+
+  // appendChild()
+  const $logs3 = document.querySelector("#logs3");
+  const msg2 = document.createTextNode('text 7');
+  const msg3 = document.createTextNode('text 8')
+  $logs3.appendChild(msg2); // Only one node can be used
+  $logs3.appendChild(msg3); // text 7text 8
+  console.log($logs3.appendChild(msg3)); // text 8
+</script>
+</body>
+</html>
