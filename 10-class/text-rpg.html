@@ -111,7 +111,7 @@
     const input = event.target['battle-input'].value;
     if (input === '1') { // 공격
       hero.attack(monster);
-      monster.attack(hero);
+      monster.attack(hero); // Q. Where is attack function in monster object?
       $heroHp.textContent = `HP: ${hero.hp}/${hero.maxHp}`;
       $monsterHp.textContent = `HP: ${monster.hp}/${monster.maxHp}`;
       $message.textContent = `${hero.att}의 데미지를 주고, ${monster.att}의 데미지를 받았다.`;
