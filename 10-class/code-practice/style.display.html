@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <div id="div">Hi</div>
+  <div id="div2" style="display: none;">Bye</div> <!-- Can set style in tag -->
+
+  <script>
+    const $div = document.querySelector("#div");
+    const $div2 = document.querySelector("#div2");
+    $div.style.display = "none"; // Can set style in property
+
+    // none
+    // setTimeout(() => $div.style.display = "block", 2000);
+
+    // block
+    setTimeout(() => $div.style.display = "block", 2000);
+    setTimeout(() => $div2.style.display = "block", 4000);
+  </script>
+
+</body>
+</html>
