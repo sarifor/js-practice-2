@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // 1. Primitive Values: Copy
+    let message = "SKY PUNCH!";
+    let phrase = message;
+
+
+
+    // 2. Objects: Reference
+    let girl = {
+      name: "Sora"
+    };
+    let precure = girl;
+    precure.name = "Mashiro";
+    console.log(girl.name); // Mashiro
+
+    let a = {};
+    let b = a;
+    console.log( a == b ); // true
+    console.log( a === b ); // true
+
+    let c = {};
+    let d = {};
+    console.log( c == d ); // false
+    console.log( c === d ); // false
+
+
+
+    // 3. Objects: Shallow Copy
+
+    // 3.1 원시 수준까지 프로퍼티를 복사
+    let boy = {
+      name: "Tsubasa",
+      age: 12
+    };
+    let clone = {};
+
+    for (let key in boy) {
+      clone[key] = boy[key];
+    }
+
+    clone.name = "Ageha";
+    console.log(`${boy.name} and ${clone.name} are different`); // Tsubasa and Ageha are different
+    
+
+    // 3.2 Object.assign
+    let man = {
+      name: "Mamoru"
+    };
+    let clone2 = Object.assign({}, man);
+
+    console.log(clone2.name); // Mamoru
+
+    
+    // 3.3 프로퍼티가 객체인 경우 참조 값이 복사됨
+    let animal = {
+      name: "Kero",
+      favorits: {
+        food: "Takoyaki",
+        game: "Mario"
+      }
+    };
+    let clone3 = Object.assign({}, animal);
+    
+    console.log(`${animal.name} and ${clone3.name} are same animal: ${animal === clone3}`); // false
+    console.log(`${animal.name} and ${clone3.name}'s favorits are same: ${animal.favorits === clone3.favorits}`); // true
+
+
+
+    // 4. Objects: Deep Copy
+    let obj1 = {
+      a: 0,
+      b: { c: 0 }
+    };
+    let obj3 = JSON.parse(JSON.stringify(obj1)); // "일단 문자열로 만든 담에 객체로 만듦"
+    
+    obj1.a = 4;
+    obj1.b.c = 4;
+    console.log(JSON.stringify(obj3)); // {"a":0,"b":{"c":0}} // 객체의 구조도 복사함
+  </script>
+</body>
+</html>
