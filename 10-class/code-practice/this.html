@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // 메서드에서 this로 객체에 접근
+    let boy = {
+      name: "Tsubasa",
+      age: 12,
+      
+      fly() {
+        alert(`me, ${this.name}, now flying! WOW!`)
+      }
+    };
+
+    boy.fly();
+
+
+    // 메서드에서 외부 변수로 객체에 접근
+    let woman = {
+      name: "Ageha",
+      age: 18,
+      
+      compliment() {
+        alert(`GOOD JOB! ${woman.name} wants to fly together!`);
+      }
+    };
+
+    woman.compliment();
+
+
+    // this는 함수를 호출하는 동안의 객체
+    let girl = { name: "Usagi" };
+    let girl2 = { name: "Minako"};
+
+    function eatFood() {
+      console.log( `${this.name}: Delicious-mile!` );
+    }
+
+    girl.func = eatFood;
+    girl2.func = eatFood;
+
+    girl.func(); // Usagi: Delicious-mile!
+    girl2.func(); // Minako: Delicious-mile!
+    girl2['func'](); // Minako: Delicious-mile!
+    
+
+    // 객체 없이 함수 호출 가능 (엄격 모드 X)
+    function sayBye() {
+      console.log(this);
+    }
+
+    sayBye(); // Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+
+    // 화살표 함수는 고유한 this가 없음
+
+  </script>
+</body>
+</html>
