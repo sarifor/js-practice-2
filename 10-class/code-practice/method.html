@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // 객체 리터럴 안에 메서드 선언
+    let person = {
+      name: "Kashima",
+      age: 17
+    };
+
+    person.runAway = function() {
+      alert("Bye-bye!");
+    };
+
+    person.runAway();
+
+
+    // 이미 정의된 함수를 메서드로 이용 
+    let person2 = {
+      name: "Hori",
+      age: 18
+    };
+
+    function getAngry() {
+      alert("Where are you going?!");
+    };
+
+    person2.getAngry = getAngry;
+    person2.getAngry();
+
+
+    // 객체 리터럴 안에 메서드 선언 시, function 생략 가능
+    /* let person3 = {
+      name: "Mikoshiba",
+      age: 17,
+      saySomething: function() {
+        alert("You are always looking at her...");
+      }
+    }; */
+
+    let person3 = {
+      name: "Mikoshiba",
+      age: 17,
+      saySomething() {
+        alert("You are always looking at her...");
+      }
+    };
+
+    person3.saySomething();
+  </script>
+</body>
+</html>
