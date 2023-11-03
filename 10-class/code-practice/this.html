@@ -58,6 +58,15 @@
 
 
     // 화살표 함수는 고유한 this가 없음
+    let student = {
+      firstName: "sally",
+      sayKonbanwa() {
+        let arrow = () => console.log(this.firstName); // 외부 함수 sayKonbanwa()의 this
+        arrow();
+      }
+    };
+
+    student.sayKonbanwa(); // sally
 
   </script>
 </body>
