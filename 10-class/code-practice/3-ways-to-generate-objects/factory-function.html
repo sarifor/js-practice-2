@@ -1,0 +1,25 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // Generate a new object
+    function createSailorGuardian(name, power) {
+      return { name, power };
+    }
+
+    const guardian1 = createSailorGuardian('Sailor Moon', 10000);
+    const guardian2 = createSailorGuardian('Sailor Mars', 1000);
+
+    console.log(guardian1, guardian2);
+
+    
+    // Check if two objects are same
+    console.log(Object.is(guardian1, guardian2)); // false
+  </script>
+</body>
+</html>
