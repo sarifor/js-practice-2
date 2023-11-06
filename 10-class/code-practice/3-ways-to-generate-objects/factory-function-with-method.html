@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    function createSailorGuardian(name, power) {
+      return { 
+        name, power,
+        attack(monster) {
+          monster.hp -= 5;
+          this.power -= 1;
+        }
+      };
+    }
+
+    const guardian1 = createSailorGuardian('Sailor Moon', 10000);
+    const monster = {
+      name: "No-named villain",
+      hp: 1000
+    };
+
+    guardian1.attack(monster);
+    
+    console.log(guardian1); // {name: 'Sailor Moon', power: 9999, attack: ƒ}
+    console.log(monster); // {name: 'No-named villain', hp: 995}
+  </script>
+</body>
+</html>
