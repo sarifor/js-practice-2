@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    class Bird {
+      constructor(name, power) {
+        this.name = name;
+        this.power = power;
+      }
+      attack(enemy) {
+        enemy.hp -= this.power;
+      }
+    }
+
+    const bird1 = new Bird('Cockatoo', 5);
+    const bird2 = new Bird('Crow', 10);
+    const father = {
+      name: "Father",
+      hp: 100
+    };
+
+    bird1.attack(father);  
+
+    console.log(bird1, bird2);
+    console.log(father);
+  </script>
+</body>
+</html>
