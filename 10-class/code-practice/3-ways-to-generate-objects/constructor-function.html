@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    function Animal(name, age) {
+      this.name = name;
+      this.age = age;
+      console.log(`${name} and ${age} are used for ${this}`); // Cat and 1 are used for [object Window]
+    }
+
+    // Must attach new
+    const animal1 = new Animal('Rabbit', 5);
+    const animal2 = new Animal('Cow', 10);
+
+    // If new is not attached, this is window
+    const animal3 = Animal('Cat', 1);
+    
+    console.log(animal1, animal2);
+    console.log(animal3); // undefined
+  </script>
+</body>
+</html>
