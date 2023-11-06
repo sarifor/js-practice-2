@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    function Animal(name, happiness) {
+      this.name = name;
+      this.happiness = happiness;
+      console.log(`${name} is used for ${this}`); // Cat and 1 are used for [object Window]
+    }
+
+    Animal.prototype.eat = function(food) {
+      this.happiness += 1;
+    };
+
+    const animal1 = new Animal('Rabbit', 5);
+    
+    animal1.eat("carrot");
+    console.log(animal1); // Animal {name: 'Rabbit', happiness: 6}
+    
+  </script>
+</body>
+</html>
