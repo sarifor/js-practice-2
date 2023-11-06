@@ -6,6 +6,8 @@
 </head>
 
 <body>
+  <button id="test1">Normal func.</button>
+  <button id="test2">Arrow func.</button>
   <script>
     // 메서드에서 this로 객체에 접근
     let boy = {
@@ -68,6 +70,20 @@
 
     student.sayKonbanwa(); // sally
 
+
+    // 화살표 함수가 아니면 기존 this를 유지하지 못함
+    // 함수 선언문
+    const $test1 = document.querySelector('#test1');
+    function normalFunc() {
+      console.log(`${this} is clicked`); // [object HTMLButtonElement] is clicked
+    }
+    $test1.addEventListener("click", normalFunc);
+
+    // 화살표 함수
+    const $test2 = document.querySelector('#test2');
+    let arrow2 = () => console.log(`${this} is clicked`); // [object Window] is clicked
+
+    $test2.addEventListener("click", arrow2);
   </script>
 </body>
 </html>
