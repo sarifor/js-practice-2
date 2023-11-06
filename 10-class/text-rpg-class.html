@@ -66,8 +66,8 @@
     }
     start(name) {
       console.log(this);
-      $gameMenu.addEventListener('submit', this.onGameMenuInput);
-      $battleMenu.addEventListener('submit', this.onBattleMenuInput);
+      $gameMenu.addEventListener('submit', this.onGameMenuInput); // Game 클래스의 메서드
+      $battleMenu.addEventListener('submit', this.onBattleMenuInput); // Game 클래스의 메서드
       this.changeScreen('game');
       this.hero = new Hero(this, name);
       this.updateHeroStat();
@@ -234,7 +234,7 @@
   }
 
   let game = null;
-  $startScreen.addEventListener('submit', (event) => {
+  $startScreen.addEventListener('submit', (event) => { // 게임 클래스의 메서드 아님
     event.preventDefault();
     const name = event.target['name-input'].value;
     game = new Game(name);
