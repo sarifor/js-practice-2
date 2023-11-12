@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice: Display a shallow copied book in Bookstore</title>
+</head>
+
+<body>
+  <script>
+    class Bookstore {
+      constructor() {
+        this.bookList = [{
+          name: "Hop, step, jump!",
+          price: 698,
+        }];
+        this.book = null;
+      }
+
+      display = () => {
+        const randomBook = this.bookList[0]
+        this.book = new Book(
+          randomBook.name,
+          randomBook.price,
+        );
+
+        console.log(this.book.name); // Hop, step, jump!
+        console.log(this.bookList[0] === this.book); // false(Shallow copied)
+      }
+    }
+
+    class Product {
+      constructor(name, price) {
+        this.name = name;
+        this.price = price;
+      }
+    }
+
+    class Book extends Product {
+      constructor(name, price) {
+        super(name, price);
+      }
+    }
+    
+    const bs = new Bookstore(); // 클래스 직접 사용 vs 객체로 만들고 나서 사용?
+    bs.display();
+  </script>
+</body>
+</html>
