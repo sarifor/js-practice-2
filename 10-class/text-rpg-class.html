@@ -95,7 +95,7 @@
         const randomIndex = Math.floor(Math.random() * this.monsterList.length);
         const randomMonster = this.monsterList[randomIndex];
         this.monster = new Monster(
-          this,
+          this, // Monster 클래스 내부에서 Game 클래스의 메서드나 속성에 접근할 수 있게 함
           randomMonster.name,
           randomMonster.hp,
           randomMonster.att,
