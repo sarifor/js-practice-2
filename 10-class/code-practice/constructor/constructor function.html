@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // 1. What is constructor function?
+    function Bird(name) { // Started with Capital letter
+      // this = {}; // 빈 객체가 임시적으로 만들어짐
+      this.name = name;
+      this.isPet = false;
+
+      // return this; // this가 임시적으로 반환됨
+    }
+
+    let bird = new Bird("Koko"); // Executed with 'new' operator
+    console.log(bird.name); // Koko
+    console.log(bird.isPet); // false
+
+
+    // 2. 객체 리터럴로 만든 객체와 동일 동작
+    let bird2 = {
+      name: "Louis",
+      isPet: true
+    };
+    console.log(bird2.isPet); // true
+
+
+    // 3. 메서드도 더해줄 수 있음
+    function Toy(name) {
+      this.name = name;
+      this.singAndDance = function() { // 객체 리터럴에선 singAndDance: function() { ... } 으로 기술
+        console.log("Let's dance! YEY!");
+      };
+    }
+
+    let toy = new Toy("Anpanman the dancer");
+    toy.singAndDance(); // Let's dance! YEY!
+
+  </script>
+</body>
+</html>
