@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 3. Constructor overriding</title>
+</head>
+
+<body>
+  <script>
+    // 1. 자체 생성자 없는 클래스 상속 시, 비어 있는 생성자 만들어짐
+    // (추후 보충) 
+
+
+    // 2. 커스텀 생성자 추가
+    class Animal {
+      constructor(name) {
+        this.name = name;
+        // this.jump = jump() { console.log("jump!"); }
+      }
+    }
+
+
+    // 2.1 동작하지 않음 (super 호출 X)
+    /* class Cat extends Animal {
+      constructor(name, size) {
+        this.name = name; // Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+        this.size = size;
+      }
+    }
+
+    let cat = new Cat("Neneko", 50);
+    console.log(cat.name, cat.size); */
+
+
+    // 2.2 동작함 (super 호출 O)
+    class Cat2 extends Animal {
+      constructor(name, size) {
+        super(name);
+        this.size = size;
+      }
+    }
+
+    let cat2 = new Cat2("Mimiko", 10);
+    console.log(cat2.name, cat2.size); // Mimiko 10
+    console.log(cat2);
+
+    
+    // 3. 클래스 필드 오버라이딩
+    // (추후 보충)
+
+
+    // 4. super 키워드와 [[HomeObject]]
+    // (추후 보충)
+  </script>
+</body>
+</html>
