@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 2. Overriding</title>
+</head>
+
+<body>
+  <script>
+    class Baby {
+      constructor(name) {
+        this.name = name;
+        this.happiness = 0;
+      }
+      eat(foodAmount) {
+        this.happiness += foodAmount;
+        console.log(`${this.name} is as happy as ${this.happiness}!`);
+      }
+      cry() {
+        this.happiness = 0;
+        console.log(`${this.name} is as sad as ${this.happiness}...`);
+      }
+    }
+
+    
+    // 1. 전체 교체
+    class ElleChan extends Baby {
+      eat(meal, snack) {
+        console.log(`${meal} and ${snack} are yammy!`);
+      }
+    }
+    
+    let ellechan = new ElleChan("Elle");
+    ellechan.eat("rice", "candy"); // rice and candy are yammy!
+
+
+    // 2. 기능 확장
+    class ElleChan2 extends Baby {
+      sleep() {
+        console.log("zzz");
+      }
+      act(foodAmount) {
+        super.eat(foodAmount); // 부모 클래스의 메서드 호출
+        this.sleep();
+      }
+    }
+    
+    let ellechan2 = new ElleChan2("Elle 2");
+    ellechan2.act(200); // Elle 2 is as happy as 200!  zzz
+  </script>
+</body>
+</html>

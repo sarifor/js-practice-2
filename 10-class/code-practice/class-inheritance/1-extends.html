@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice 1. extends</title>
+</head>
+
+<body>
+  <script>
+    class Baby {
+      constructor(name) {
+        this.name = name;
+        this.happiness = 0;
+      }
+      eat(foodAmount) {
+        this.happiness += foodAmount;
+        console.log(`${this.name} is as happy as ${this.happiness}!`);
+      }
+      cry() {
+        this.happiness = 0;
+        console.log(`${this.name} is as sad as ${this.happiness}...`);
+      }
+    }
+    
+    let baby = new Baby("Baby");
+
+    class ElleChan extends Baby {
+      changeToPrecure() {
+        console.log(`${this.name} is now Cure Majesty!`);
+      }
+    }
+
+    let ellechan = new ElleChan("Elle");
+    ellechan.eat(100); // Baby.prototype에서 메서드 가져옴
+    ellechan.cry(); // 상동
+    ellechan.changeToPrecure();
+  </script>
+</body>
+</html>
