@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // Object > normal function > arrow function
+     let group = {
+      title: "Favorite food",
+      foods: ["Sukiyaki", "Mintchoco"],
+
+      showList() {
+        this.foods.forEach( // this: group
+          food => console.log(`${this.title}: ${food}`) // this: group
+        );
+      }
+    };
+
+     group.showList(); // Favorite food: Sukiyaki ...
+
+
+     // Object > normal function > normal function
+     let group2 = {
+      title: "Favorite food",
+      foods: ["Jelly", "Toppoki"],
+
+      showList() {
+        this.foods.forEach( // this: group2
+          function(food) {
+            console.log(this); // this: window
+          }
+        );
+      }
+    };
+
+     group2.showList();
+  </script>
+</body>
+</html>
