@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+<body>
+<script>
+// 1. Combines two or more arrays.
+// 2. 기존 배열을 수정하지 않고 새 배열을 리턴.
+let arr = ["apple", "banana"];
+console.log(arr.concat("melon", "grape"));
+console.log(arr);
+
+// 3. 인수에 배열이 올 경우, 배열의 모든 '요소'가 복사됨.
+let arr2 = [1111, 2222];
+alert( arr2.concat([3333, 4444]) ); // 1111,2222,3333,4444
+
+// 4. 인수에 객체가 올 경우, 객체는 '분해되지 않고' 통으로 복사되어 더해짐.
+let arr3 = [123, 456];
+let arrLike = {
+  789: "chilpalgu",
+  "gushipsipil": 91011,
+};
+alert(arr3.concat(arrLike)); // 123,456,[object Object]
+
+
+// 4. xx
+
+</script>
+</body>
+</html>
