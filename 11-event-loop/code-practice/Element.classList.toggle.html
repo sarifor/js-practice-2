@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+<body>
+  <div class="firstClass"></div>
+  <script>
+    // 없으면 추가
+    const div = document.querySelector(".firstClass");
+    div.classList.toggle("newClass");
+    console.log(div); // <div class="firstClass newClass"></div>
+
+    // 있으면 제거
+    setTimeout(() => {
+      div.classList.toggle("newClass");
+      console.log(div); // <div class="firstClass"></div>
+    }, "1000"); 
+
+  </script>
+</body>
+</html>
