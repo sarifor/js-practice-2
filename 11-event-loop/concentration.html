@@ -106,13 +106,15 @@
       }, 1000);
       return;
     }
+    // 두 카드의 색이 다르면 0.5초 뒤에 뒷면으로 뒤집음
+    // 즉, clicked 배열에 세 번째, 네 번째 값이 들어 있는 경우, 얘네들은 뒤집히지 않음.
     // clickable = false;
     setTimeout(() => {
       clicked[0].classList.remove('flipped');
       clicked[1].classList.remove('flipped');
       clicked = [];
       // clickable = true;
-    }, 500);
+    }, 5000);
   }
 
   function startGame() {
