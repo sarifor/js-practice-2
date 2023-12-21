@@ -71,7 +71,7 @@ function onSubmit(event) {
 $form.addEventListener('submit', onSubmit);
 
 function plantMine() {
-  const candidate = Array(row * cell).fill().map((arr, i) => {
+  const candidate = Array(row * cell).fill().map((arr, i) => { // 각 칸에 인덱스 값 가짐
     return i;
   });
   const shuffle = [];
