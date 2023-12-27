@@ -71,6 +71,7 @@ function onSubmit(event) {
 $form.addEventListener('submit', onSubmit);
 
 function plantMine() {
+  // row x cell 배열을 undefined로 채우고, 다시 0~i값으로 채움
   const candidate = Array(row * cell).fill().map((arr, i) => { // 각 칸에 인덱스 값 가짐
     return i;
   });
