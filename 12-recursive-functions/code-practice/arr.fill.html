@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    const hiragana = ["a", "i", "u", "e", "o"];
+    
+    // Index 2부터 4 전까지 0으로 채움.
+    alert(hiragana.fill(0, 2, 4)); // a,i,0,0,o
+
+
+    // 기존 배열 수정되어 버림
+    alert(hiragana); // a,i,0,0,o
+
+
+    // Index 1부터 0으로 채움
+    alert(hiragana.fill(0, 1)); // a,0,0,0,0
+
+
+    // 모두 0으로 채움
+    alert(hiragana.fill(0)); // 0,0,0,0,0
+
+
+    // 채울 값 미지정 -> undefined로 채워짐
+    alert(hiragana.fill()); // ,,,,
+
+    for (let i = 0; i <5; i++) {
+      console.log(hiragana[i]); // undefined
+    }
+
+
+    // mine-sweeper.html의 plantMine() 함수 내 fill 메서드 파악
+    let row = 5;
+    let cell = 4;
+    const candidate = Array(row * cell).fill().map((arr, i) => {
+      return i;
+    })
+    console.log(candidate); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+  </script>
+</body>
+</html>
