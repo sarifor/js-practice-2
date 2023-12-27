@@ -1,0 +1,62 @@
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <script>
+    // 1. 정의
+    const numbers = [1, 4, 9];
+    const roots = numbers.map(item => item * 2);
+
+
+    // 2. forEach 메서드 vs map 메서드
+    // map 메서드
+    console.log(roots); // [2, 8, 18] // 새 배열 반환
+    console.log(numbers); // [1, 4, 9] // 원본 배열 그대로
+
+
+    // 3. 콜백 함수에 3개 인수(요소 값, 인덱스, 배열 자체(this)) 전달
+    const newArr = [1, 2, 3].map((item, index, arr) => {
+      console.log(`요소 값: ${item}, 인덱스: ${index}, this: ${arr}`);
+      return item * 2;
+    });
+    console.log(newArr); // [2, 4, 6]
+
+
+    // 4. Prefixer 클래스의 인스턴스를 this로 전달
+    // 4.1 방법 1: this를 명시적으로 전달
+    class Prefixer {
+      constructor(prefix) {
+        this.prefix = prefix;
+      }
+
+      add(arr) {
+        return arr.map(function (item) {
+          console.log(this); // Prefixer {prefix: '-webkit-'}
+          return this.prefix + item;
+        }, this);
+      }
+    }
+
+    const prefixer = new Prefixer('-webkit-');
+    console.log(prefixer.add(['transition', 'user-select'])); // ['-webkit-transition', '-webkit-user-select']
+
+
+    // 4.2 방법 2: ES6 화살표 함수로 상위 스코프의 this를 그대로 전달
+    class Prefixer2 {
+      constructor(prefix) {
+        this.prefix = prefix;
+      }
+
+      add(arr) {
+        console.log(this); // Prefixer2 {prefix: '-webkit2-'}
+        return arr.map(item => this.prefix + item);
+      }
+    }
+
+    const prefixer2 = new Prefixer2('-webkit2-');
+    console.log(prefixer2.add(['transition2', 'user-select2'])); // ['-webkit2-transition2', '-webkit2-user-select2']
+
+</script>
+</body>
+</html>
