@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <!-- return false (1) -->
+  <a href="https://yahoo.co.jp" onclick="return false">Here(return false)</a><br />  
+
+  <!-- event.preventDefault() -->
+  <a href="https://yahoo.co.jp" onclick="event.preventDefault()">Or Here(event.preventDefault())</a>
+
+  <ul id="menu" class="menu">
+    <li><a href="https://yahoo.co.jp">Yahoo</a></li>
+    <li><a href="https://google.co.jp">Google</a></li>
+    <li><a href="https://chat.openai.com/">ChatGPT</a></li>
+  </ul>
+
+  <script>
+    // return false (2)
+    menu.onclick = function(event) {
+      if (event.target.nodeName != 'A') return;
+
+      let href = event.target.getAttribute('href');
+      alert( href ); // 브라우저 동작을 취소시키고 대신 원하는 동작 넣음
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>
