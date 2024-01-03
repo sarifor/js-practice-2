@@ -175,16 +175,18 @@ function openAround(rI, cI) {
   const count = open(rI, cI);
   // Uncaught RangeError: Maximum call stack size exceeded
   // 100 x 100 정도의 큰 사이즈로 만들면 보임
-  if (count === 0) {
-    openAround(rI - 1, cI - 1);
-    openAround(rI - 1, cI);
-    openAround(rI - 1, cI + 1);
-    openAround(rI, cI - 1);
-    openAround(rI, cI + 1);
-    openAround(rI + 1, cI - 1);
-    openAround(rI + 1, cI);
-    openAround(rI + 1, cI + 1);
-  }
+  setTimeout(() => {
+    if (count === 0) {
+      openAround(rI - 1, cI - 1);
+      openAround(rI - 1, cI);
+      openAround(rI - 1, cI + 1);
+      openAround(rI, cI - 1);
+      openAround(rI, cI + 1);
+      openAround(rI + 1, cI - 1);
+      openAround(rI + 1, cI);
+      openAround(rI + 1, cI + 1);
+    }
+  }, 0);
 }
 
 function onLeftClick(event) {
