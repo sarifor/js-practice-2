@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // x를 n 제곱해 주는 함수 (for 문 사용)
+    function pow(x, n) {
+      let result = 1;
+
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+
+      return result;
+    }
+
+    alert( pow(2, 3) ); // 8
+
+  </script>
+</body>
+</html>
