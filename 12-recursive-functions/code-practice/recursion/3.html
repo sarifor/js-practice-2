@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // 10부터 1까지 1씩 줄여가며 출력 (재귀 사용: if 문)
+    function recurse(x) {
+      if (x > 0) {
+        console.log(x);
+        recurse(x - 1);
+      }
+    }
+    
+    recurse(10); // 10 9 8 7 6 5 4 3 2 1
+
+  </script>
+</body>
+</html>
