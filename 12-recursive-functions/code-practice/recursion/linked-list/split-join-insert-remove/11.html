@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // (연결 리스트 맨 앞에) 요소 추가
+    let list3 = { value: 5 };
+    list3.next = { value: 6 };
+    list3 = { value: 7, next: list3 }; // list3에 재할당한 것에 주목!
+    console.log(list3); // 7 -> 5 -> 6
+
+
+    // (연결 리스트 중간의) 요소 삭제
+    let list4 = JSON.parse(JSON.stringify(list3)); // 깊은 복사
+    list4.next = list4.next.next;
+    console.log(list4); // 7 -> 6
+
+  </script>
+</body>
+</html>

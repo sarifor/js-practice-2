@@ -7,7 +7,7 @@
 
 <body>
   <script>
-    // next 프로퍼티로 객체 어디든 도달 가능
+    // 연결 리스트 나누기
     let list = {
       value: 1,
       next: {
@@ -21,9 +21,14 @@
         }
       }
     };
+    // console.log(list); // 희망: 1 -> 2 -> 3 -> 4 -> null, 실제: 1 -> 2 -> null  // 이유?
 
-    let secondList = list.next.next;
-    console.log(secondList); // 3 -> 4 -> null
+
+    let list2 = list.next.next; // "참조 관계"
+    list.next.next = null;
+
+    console.log(list); // 1 -> 2 -> null
+    console.log(list2); // 3 -> 4 -> null
 
   </script>
 </body>

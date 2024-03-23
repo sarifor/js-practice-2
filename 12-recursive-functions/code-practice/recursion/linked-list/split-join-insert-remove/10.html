@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // 연결 리스트 합치기
+    let list = {
+      value: 1,
+      next: {
+        value: 2,
+        next: {
+          value: 3,
+          next: {
+            value: 4,
+            next: null
+          }
+        }
+      }
+    };
+
+    let list2 = {
+      value: 5,
+      next: {
+        value: 6,
+        next: {
+          value: 7,
+          next: {
+            value: 8,
+            next: null
+          }
+        }
+      }
+    };
+
+    list.next.next.next.next = list2;
+    console.log(list); // 1 -> 2 -> 3 ... -> 8 -> null
+
+  </script>
+</body>
+</html>
