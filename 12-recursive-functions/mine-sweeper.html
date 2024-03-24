@@ -149,7 +149,7 @@ function countMine(rowIndex, cellIndex) {
 }
 
 function open(rowIndex, cellIndex) {
-  if (data[rowIndex]?.[cellIndex] >= CODE.OPENED) {
+  if (data[rowIndex]?.[cellIndex] >= CODE.OPENED) { // 한 번 열었던 칸이면 다시 열지 않음
     console.log("data[rowIndex]?.[cellIndex]: ", data[rowIndex]?.[cellIndex]);
     console.log("CODE.OPENED: ", CODE.OPENED);
     return;
