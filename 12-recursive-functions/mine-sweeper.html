@@ -46,7 +46,7 @@ const CODE = {
   QUESTION_MINE: -4,
   FLAG_MINE: -5,
   MINE: -6,
-  OPENED: 0, // 0 이상이면 다모두 열린 칸
+  OPENED: 0, // 0에서 불변  // 열린 칸 개수 집계는 opencount로 함
 };
 let data;
 let openCount = 0;
@@ -130,6 +130,7 @@ function onRightClick(event) {
   }
 }
 
+// 클릭한 칸 주변의 지뢰 개수
 // 1 2 3
 // 4 5 6
 // 7 8 9
@@ -148,17 +149,24 @@ function countMine(rowIndex, cellIndex) {
 }
 
 function open(rowIndex, cellIndex) {
-  if (data[rowIndex]?.[cellIndex] >= CODE.OPENED) return;
+  if (data[rowIndex]?.[cellIndex] >= CODE.OPENED) {
+    console.log("data[rowIndex]?.[cellIndex]: ", data[rowIndex]?.[cellIndex]);
+    console.log("CODE.OPENED: ", CODE.OPENED);
+    return;
+  }
   const target = $tbody.children[rowIndex]?.children[cellIndex];
   if (!target) {
     return;
   }
   const count = countMine(rowIndex, cellIndex);
+  console.log("count: ", count);
   target.textContent = count || '';
   target.className = 'opened';
-  data[rowIndex][cellIndex] = count;
-  openCount++;
-  console.log(openCount);
+  data[rowIndex][cellIndex] = count; // 클릭한 칸에, 주변의 지뢰 개수를 저장
+
+  openCount++; // 열린 칸 총 개수
+  console.log("openCount: ", openCount);
+
   if (openCount === row * cell - mine) {
     const time = (new Date() - startTime) / 1000;
     clearInterval(interval);
@@ -208,6 +216,8 @@ function onLeftClick(event) {
 
 function drawTable() {
   data = plantMine();
+  console.log("plantMine()한 결과: ", data);
+
   data.forEach((row) => {
     const $tr = document.createElement('tr');
     row.forEach((cell) => {
