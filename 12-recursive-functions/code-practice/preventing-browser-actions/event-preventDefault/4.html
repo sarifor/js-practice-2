@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <!-- # 브라우저 기본 동작 막기 by event.preventDefault (addEventListener 방식) 2 -->
+
+  <script>
+    const $div = document.createElement("div");
+    document.body.appendChild($div);
+
+    for (let i = 0; i < 100; i++) {
+      const $div2 = document.createElement("div");
+      $div2.textContent = i;
+      $div.appendChild($div2);
+    }
+
+    window.addEventListener(
+      "keydown",
+      function (event) {
+        if (event.defaultPrevented) {
+          return;
+        } else {
+          console.log(event.defaultPrevented);
+        }
+
+        switch (event.key) {
+          case "Down":
+          case "ArrowDown":
+            console.log("ArrowDown");
+            break;
+          case "Up":
+          case "ArrowUp":
+            console.log("ArrowUp");
+            break;
+          default:
+            console.log("ArrowDown과 ArrowUp 외의 다른 키");
+            return;
+        }
+
+        // 브라우저 기본 동작 취소
+        // 예: ArrowDown 키 누를 때 아래로 스크롤링되는 것 대신 console.log("ArrowDown") 동작하게 함
+        event.preventDefault();
+      },
+      true, // 이벤트가 캡처링 단계에서 처리되도록 함
+    );
+  </script>
+</body>
+</html>
