@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <!-- # 브라우저 기본 동작 막기 by return false (프로퍼티 방식) -->
+
+  <ul id="menu" class="menu">
+    <li><a href="https://chat.openai.com/">OpenAI</a></li>
+  </ul>
+
+  <script>
+    const menu = document.getElementById("menu");
+    
+    menu.onclick = function(event) { // 프로퍼티
+      if (event.target.nodeName != 'A') return;
+      
+      let href = event.target.getAttribute('href');
+      alert( href ); // 대신 넣을 동작
+
+      return false; // 브라우저 기본 동작 취소
+    }
+  </script>
+</body>
+</html>
