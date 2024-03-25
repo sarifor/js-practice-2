@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>예: xx</title>
+</head>
+
+<body>
+  <script>
+    // 추가할 노드 개수
+    const totalNumOfNodes = 100000;
+    
+
+    // parent에 child 직접 추가
+    const parent = document.createElement("div");
+    document.body.appendChild(parent);
+
+    const t0 = performance.now();
+
+    for (let i = 0; i < totalNumOfNodes; i++) {
+      const child = document.createElement("div");
+      child.textContent = `test 1 - ${i}`;
+      parent.appendChild(child);
+    }
+
+    const t1 = performance.now();
+
+
+    // fragments에 child들을 추가하고, parent에 한 번에 추가
+    const fragments = document.createDocumentFragment();
+    
+    for (let i = 0; i < totalNumOfNodes; i++) {
+      const child = document.createElement("div");
+      child.textContent = `test 2 - ${i}`;      
+      fragments.appendChild(child);
+    }
+    parent.appendChild(fragments); // 한 번에 추가
+
+    const t2 = performance.now();
+
+    console.log(`Rendering test 1 took ${t1 - t0} milliseconds`); // 320 ms
+    console.log(`Rendering test 2 took ${t2 - t1} milliseconds`); // 161 ms(테스트를 다시 해 보면 test 1보다 시간이 더 걸릴 때도 있음)
+
+  </script>
+</body>
+</html>
