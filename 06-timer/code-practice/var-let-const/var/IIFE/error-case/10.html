@@ -8,7 +8,7 @@
   <script>
     // 함수 이름 O, 괄호 X -> 에러 발생
     function something() {
-      let message = "Hi";
+      var message = "Hi";
 
       alert(message);
     }(); // Uncaught SyntaxError: Unexpected token ')'
