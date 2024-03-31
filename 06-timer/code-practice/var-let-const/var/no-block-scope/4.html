@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // var in 코드 블록 in 함수 -> var는 함수 레벨 변수
+    function sayKonnichiwa() {
+      if (true) {
+        var aisatsu = "Konnichiwa";
+      }
+      alert(aisatsu);
+    }
+
+    sayKonnichiwa(); // Konnichiwa
+    alert(aisatsu); // Uncaught ReferenceError: aisatsu is not defined
+  </script>
+</body>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // var 선언 in 함수 -> 함수 시작될 때 처리됨
+    function sayBye() {
+      phrase = "Byebye";
+      
+      alert(phrase);
+
+      var phrase; // 함수 맨 위로 이동한 것처럼 동작
+    }
+    sayBye(); // Byebye
+  </script>
+</body>
