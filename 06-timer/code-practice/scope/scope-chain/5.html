@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  /* # Scope chain
+    - 정의
+      스코프가 계층적으로 연결된 것
+      자바스크립트 엔진은 변수를 참조할 때 스코프 체인을 통해
+      변수를 참조하는 코드의 스코프에서 시작하여 상위 스코프 방향으로 이동하며
+      선언된 변수를 검색함(identifier resolution)
+
+    - 스코프 체인에 의한 변수 검색 예시
+      -> 코드 주석
+  */
+  
+  var x = "global x";
+  var y = "global y"; // 4. 전역 스코프에서 y 변수 선언했나 검색 -> 존재 -> 검색된 변수 참조하고 검색 종료
+
+  function outer() { // 3. outer 함수의 지역 스코프에서 y 변수 선언했나 검색
+    var z = "outer's local z";
+
+    console.log("outer: ", x);
+    console.log("outer: ", y);
+    console.log("outer: ", z);
+
+    function inner() { // 2. inner 함수의 지역 스코프에서 y 변수 선언했나 검색
+      var x = "inner's local x";
+
+      console.log("inner: ", x);
+      console.log("inner: ", y); // 1. y 변수를 참조하는 코드
+      console.log("inner: ", z);
+    }
+
+    inner();
+  }
+
+  outer();
+
+  console.log("global: ", x); // global x
+  console.log("global: ", z); // Uncaught ReferenceError: z is not defined
+</script>
+</body>

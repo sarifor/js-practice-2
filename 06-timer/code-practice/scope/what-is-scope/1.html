@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # Scope(유효범위)의 정의
+  function add(x, y) {
+    console.log(x, y); // 3, 4  // 함수의 매개변수는 함수 몸체 내부에서만 참조 가능
+    return x + y;
+  }
+
+  add(3, 4);
+
+  console.log(x, y); // Uncaught ReferenceError: x is not defined
+</script>
+</body>

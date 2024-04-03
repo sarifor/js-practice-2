@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # Scope(유효범위)의 정의 2
+  // 식별자(변수 이름 등) 선언 위치 -> 다른 코드가 참조할 수 있는 유효 범위 결정
+  // *선언 위치: 코드 가장 바깥 영역, 코드 블록, 함수 몸체 내
+
+  var var1 = 1; // 코드 가장 바깥 영역에서 선언한 변수
+
+  if (true) {
+    var var2 = 2; // 코드 블록 내에서 선언한 변수
+    if (true) {
+      var var3 = 3; // 중첩된 코드 블록 내에서 선언한 변수
+    }
+  }
+
+  function foo() { // 함수 내에서 선언한 변수
+    var var4 = 4;
+
+    function bar() {
+      var var5 = 5; // 중첩된 함수 내에서 선언한 변수
+    }
+  }
+
+  console.log(var1); // 1
+  console.log(var2); // 2
+  console.log(var3); // 3
+  console.log(var4); // Uncaught ReferenceError: var4 is not defined
+  console.log(var5); // Uncaught ReferenceError: var5 is not defined
+</script>
+</body>

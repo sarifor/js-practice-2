@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # Scope의 역할
+  // '식별자 결정(Identifier resolution)': 동명의 두 변수 중 어떤 변수를 참조할지 결정
+  var x = 'global';
+
+  function foo() {
+    var x = 'local';
+    console.log(x); // local
+  }
+
+  foo();
+
+  console.log(x); // global
+</script>
+</body>
