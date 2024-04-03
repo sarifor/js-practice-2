@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    function getColorCode(color) {
+      let code;
+      switch (color) {
+          case 'red': { // case 내부에서 const나 let을 사용할 때 중괄호 넣음 -> 블록 안에서만 접근 가능케 함
+            const prefix = 'R-'; // 블록 안에서만 접근 가능
+            code = prefix + '001';
+            break;
+          }
+          case 'blue': { // 상동
+            const prefix = 'B-'; // 블록 안에서만 접근 가능
+            code = prefix + '002';
+            break;
+          }
+          default: {
+            code = 'N/A';
+          }
+      }
+      return code;
+    }
+
+    console.log(getColorCode('red')); // R-001
+    console.log(getColorCode('blue')); // B-002
+    console.log(getColorCode('green')); // N/A
+  </script>
+</body>
