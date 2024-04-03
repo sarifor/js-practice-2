@@ -6,10 +6,11 @@
 
 <body>
   <script>
+    // # case 내부에서 const나 let을 사용할 때 중괄호 넣음 -> 블록 안에서만 접근 가능케 함
     function getColorCode(color) {
       let code;
       switch (color) {
-          case 'red': { // case 내부에서 const나 let을 사용할 때 중괄호 넣음 -> 블록 안에서만 접근 가능케 함
+          case 'red': { // 중괄호
             const prefix = 'R-'; // 블록 안에서만 접근 가능
             code = prefix + '001';
             break;
