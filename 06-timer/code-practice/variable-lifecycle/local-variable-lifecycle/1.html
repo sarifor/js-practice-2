@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # 지역 변수의 생명 주기
+  // - 지역 변수의 생명 주기 = 함수의 생명 주기
+  function foo() {
+    // 이 시점에서 이미 지역 변수 x 생성, undefined로 초기화
+    var x = 'local'; // 값 할당
+    console.log(x); // local
+    return x; // 지역 변수 x는 함수 종료 시 소멸
+  }
+
+  foo();
+  console.log(x); // Uncaught ReferenceError: x is not defined
+</script>
+</body>
