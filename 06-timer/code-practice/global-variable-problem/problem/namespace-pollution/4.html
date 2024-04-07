@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <!-- 
+    # 네임스페이스 오염
+    - 자바스크립트: 파일이 분리되어 있어도 하나의 전역 스코프를 공유
+    - 다른 파일 내 동일한 이름의 전역 변수/전역 함수가 같은 스코프 내 존재 -> 예상치 못한 결과 초래
+  -->
+
+  <script src="./math.js"></script>
+  <script src="./utils.js"></script>
+
+  <script>
+    console.log(add(2)); // 6  // math.js add 함수에 utils.js add 함수가 덮어씌워져버림
+  </script>
+</body>

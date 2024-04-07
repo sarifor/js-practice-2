@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # 모듈 패턴
+  // - 관련 변수와 함수를 모아 한 모듈로 만듦 by 즉시 실행 함수 -> 전역 변수 억제, 캡슐화
+
+  var Counter = (function () {
+    var num = 0; // private 변수
+
+    return { // 외부 공개할 데이터/메서드 추가된 객체 반환
+      increase() {
+        return ++num;
+      },
+      decrease() {
+        return --num;
+      }
+    };
+  }());
+
+console.log(Counter.num); // undefined  // private 변수 외부 노출 X(정보 은닉)
+
+console.log(Counter.increase()); // 1
+console.log(Counter.increase()); // 2
+console.log(Counter.decrease()); // 1
+console.log(Counter.decrease()); // 0
+</script>
+</body>

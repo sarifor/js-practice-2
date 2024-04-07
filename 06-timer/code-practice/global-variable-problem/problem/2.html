@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # 긴 생명 주기
+  // - 메모리 리소스 오래 소비, 중복 선언으로 의도치 않은 재할당
+
+  var x = 1;
+
+  // 코드 1000줄 정도 있다고 가정
+
+  var x = 100;
+  console.log(x); // 100  // 변수의 중복 선언 -> 의도치 않은 재할당
+</script>
+</body>

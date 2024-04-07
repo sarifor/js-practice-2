@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # 암묵적 결합(implicit coupling)
+  // - 서로 다른 작업에 동일 전역 변수 참조 -> 예상치 못한 결과 발생
+  var total = 0;
+
+  function addToTotal(num) {
+      total += num;
+  }
+
+  function multiplyTotalByTwo() {
+      total *= 2;
+  }
+
+  addToTotal(5);
+  multiplyTotalByTwo();
+  console.log(total); // 10
+</script>
+</body>

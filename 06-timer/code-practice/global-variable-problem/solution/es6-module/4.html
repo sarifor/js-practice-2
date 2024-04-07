@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <!-- 
+    # ES6 모듈
+    - <script> 태그로 자바스크립트 파일 로드 시 type="module" 추가 => 모듈(mjs 확장자 권장)
+    - ES6 모듈: 독자적 모듈 스코프 제공 -> 모듈 내 var 키워드 변수 /= 전역 변수
+    - 모듈 동작 in 로컬 파일(X) HTTP/HTTPS(O, Live Server Extension)
+  -->
+
+  <script type="module">
+    import { add } from "./math.mjs";
+    console.log(add(2)); // 4
+  </script>
+</body>

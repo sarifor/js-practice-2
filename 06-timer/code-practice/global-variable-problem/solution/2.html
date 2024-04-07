@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # 네임스페이스 객체
+  // - 변수 in 네임스페이스 역할 객체 => 전역 변수처럼 사용
+
+  var CHARACTER = {};
+
+  CHARACTER.name = 'Masayuki Hori';
+
+  function fanTalk() {
+    CHARACTER.name2 = 'Kashima yu';
+  }
+
+  console.log(CHARACTER); // {name: 'Masayuki Hori'}
+
+  fanTalk();
+
+  console.log(CHARACTER); // {name: 'Masayuki Hori', name2: 'Kashima yu'}
+</script>
+</body>

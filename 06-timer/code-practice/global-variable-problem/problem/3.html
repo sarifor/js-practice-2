@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # 스코프 체인 상에서 종점에 존재
+  // - 변수 검색 시, 전역 변수는 가장 마지막에 검색됨(=전역 변수의 검색 속도가 가장 느림)
+
+  var x = 10;
+
+  function foo() {
+    console.log(x); // 10  // 로컬 변수가 없으므로, 전역 변수 참조함
+  }
+
+  foo();
+</script>
+</body>

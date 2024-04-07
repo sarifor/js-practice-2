@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+<script>
+  // # 즉시 실행 함수
+  // - 전역 변수 in 즉시 실행 함수 => 지역 변수 in 즉시 실행 함수
+
+  (function () {
+    var foo = 10;
+    console.log("foo in 즉시 실행 함수: ", foo)
+    
+  }());
+
+  console.log("foo in 전역: ", foo); // Uncaught ReferenceError: foo is not defined
+</script>
+</body>
