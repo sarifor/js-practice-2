@@ -13,7 +13,9 @@
   -->
 
   <script type="module">
-    import { add } from "./math.mjs";
-    console.log(add(2)); // 4
+    import { add as mathAdd } from "./math.mjs";
+    import { add as utilsAdd } from "./utils.mjs";
+    console.log(mathAdd(2)); // 4
+    console.log(utilsAdd(2)); // 6
   </script>
 </body>
