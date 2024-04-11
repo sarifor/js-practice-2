@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <!-- 
+    # 엄격 모드
+    - 모듈은 항상 엄격 모드로 실행됨
+  -->
+  <script>
+    a = 4; // 아무 에러 안 뜸
+  </script>
+
+  <script type="module">
+    // b = 5; // Uncaught ReferenceError: b is not defined
+  </script>
+</body>

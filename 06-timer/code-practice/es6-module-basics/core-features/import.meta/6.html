@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <!-- 
+    # import.meta
+    - 현재 모듈에 대한 정보 제공
+    - HTML 안의 모듈의 경우, 현재 실행 중인 웹페이지의 URL 정보 제공
+  -->
+  <script type="module">
+    console.log(import.meta.url); // http://127.0.0.1:5500/06-timer/code-practice/es6-module-basics/core-features/import.meta/6.html
+    
+    const currentURL = import.meta.url;
+    const pathnameStartIndex = currentURL.lastIndexOf('/') + 1;
+    const pathname = currentURL.substring(pathnameStartIndex);
+    console.log(pathname); // 6.html
+
+    if (pathname === '6.html') {
+      console.log(`Welcome! You are on ${pathname}`); // Welcome! You are on 6.html
+    } else {
+      console.log(`Go back. You are on ${pathname}`);
+    }
+  </script>
+</body>

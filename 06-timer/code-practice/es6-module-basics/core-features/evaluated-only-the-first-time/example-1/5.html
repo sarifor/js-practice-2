@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <!-- 
+    # 단 한 번만 평가됨
+    - 동일 모듈이 여러 곳에서 사용되더라도, 해당 모듈은 최초 호출 시 단 한 번만 실행됨.
+  -->
+  <script type="module">
+    console.log("Before importing alert in first module");
+    import './alert.js';
+    console.log("Aefore importing alert in first module");
+  </script>
+
+  <script type="module">
+    console.log("Before importing alert in second module");    
+    import './alert.js';
+    console.log("After importing alert in second module");    
+  </script>
+</body>
