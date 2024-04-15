@@ -1,0 +1,26 @@
+{
+  "name": "js-practice-2",
+  "version": "1.0.0",
+  "description": "Practice JavaScript step by step with a book",
+  "engines": {
+    "node": "^18.17.1",
+    "npm": "^9.6.7"
+  },
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarifor/js-practice-2.git"
+  },
+  "author": "sarifor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarifor/js-practice-2/issues"
+  },
+  "homepage": "https://github.com/sarifor/js-practice-2#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
