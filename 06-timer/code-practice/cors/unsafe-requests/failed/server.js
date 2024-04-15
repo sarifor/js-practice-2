@@ -10,7 +10,7 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
 
   // 허용할 메서드 및 헤더 설정
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // PATCH 비허용
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
   // Preflight 요청에 대한 처리
