@@ -1,0 +1,25 @@
+<!DOCTYPE html> <!-- Access to fetch at 'https://yahoo.co.jp/' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled. -->
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <!-- 
+    # 크로스 오리진 요청
+    - 오리진이 다르면 요청 실패할 수 있음
+    - 리모트 오리진에서 전송받은 특별한 헤더 필요
+    - (Cross-Origin Resource Sharing)
+  -->
+  <script>
+    async function tryFetch() {
+      try {
+        await fetch('https://yahoo.co.jp'); // GET https://yahoo.co.jp/ net::ERR_FAILED 301 (Moved Permanently)
+      } catch(err) {
+        alert(err); // TypeError: Failed to fetch
+      }
+    }
+
+    tryFetch();
+  </script>
+</body>
