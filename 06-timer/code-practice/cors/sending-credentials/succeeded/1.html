@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!-- Access to fetch at 'http://localhost:3000/' from origin 'null' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The value of the 'Access-Control-Allow-Origin' header in the response must not be the wildcard '*' when the request's credentials mode is 'include'. -->
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <!-- 
+    # Sending credentials
+    - 이하 Succeeded case(서버(VSC Live Server) -> 서버)
+  -->
+  <button onclick="sendRequest()">요청 보내기</button>
+
+  <script>
+    function sendRequest() {
+      fetch('http://localhost:3000', 
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'API-Key': 'secret'
+          },
+          credentials: 'include' // fetch 메서드에 자격 증명 정보를 함께 전송
+        }
+      )
+        .then(response => response.text())
+        .then(data => console.log(data))
+        .catch(error => console.error('오류 발생:', error));
+    }
+  </script>
+</body>
