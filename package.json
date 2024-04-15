@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/sarifor/js-practice-2#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
     "express": "^4.19.2"
   }
 }

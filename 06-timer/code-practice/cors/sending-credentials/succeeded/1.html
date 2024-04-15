@@ -13,12 +13,16 @@
 
   <script>
     function sendRequest() {
+      // document.cookie = "yummy_cookie=choco"; // 쿠키 생성
+      // console.log(document.cookie); // yummy_cookie=choco  // 크롬 개발자 도구 Application 탭의 Cookies에서도 확인 가능
+
       fetch('http://localhost:3000', 
         {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
-            'API-Key': 'secret'
+            'API-Key': 'secret',
+            // 'Cookie': document.cookie
           },
           credentials: 'include' // fetch 메서드에 자격 증명 정보를 함께 전송
         }

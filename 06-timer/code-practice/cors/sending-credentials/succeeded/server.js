@@ -1,6 +1,10 @@
 const express = require('express');
+// const cookieParser = require('cookie-parser');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// app.use(cookieParser());
 
 // CORS 설정
 app.use((req, res, next) => {
@@ -28,6 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.patch('/', (req, res) => {
+  // console.log(req.headers.cookie); // 클라이언트로부터 받은 cookie 확인
   res.send('PATCH 메서드를 허용합니다.');
 })
 
