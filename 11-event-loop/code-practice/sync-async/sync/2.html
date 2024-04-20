@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+<body>
+  <script>
+    // # 동기 처리 방식
+    // - sleep, foo, bar 순 실행 (실행 순서 보장)
+    // - bar 함수는 3초 이상 호출되지 못하고 블로킹됨
+
+    function sleep(func, delay) {
+      const delayUntil = Date.now() + delay;
+
+      while (Date.now() < delayUntil);
+
+      func();
+    }
+
+    function foo() {
+      console.log('foo');
+    }
+
+    function bar() {
+      console.log('bar');
+    }
+
+    sleep(foo, 3 * 1000); // 3초 후에 foo 함수 호출
+    bar(); // 3초 이상 호출되지 못하고 블로킹됨
+  </script>
+</body>
+</html>

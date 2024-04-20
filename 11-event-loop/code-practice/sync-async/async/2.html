@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+<body>
+  <script>
+    // # 비동기 처리 방식
+    // - 콜백 함수는 콜 스택이 비게 되면 비로소 콜 스택에 푸시되어 실행됨
+
+    function foo() {
+      console.log('foo');
+    }
+
+    function bar() {
+      console.log('bar');
+    }
+
+    setTimeout(foo, 0); // 최소 지연 시간 4ms 지정됨
+    bar();
+  </script>
+</body>
+</html>
