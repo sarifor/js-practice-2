@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    /* # const 변수
+     - 호이스팅되지만 초기화되기 전까지 임시적인 일시적 사각지대(temporal dead zone)에 머무르게 됨
+     - 그래서 첫 번째 console.log(foo)에서는 초기화되기 전이므로 에러 발생
+    */
+
+    {
+      console.log(foo); // Uncaught ReferenceError: Cannot access 'foo' before initialization
+      const foo = 1;
+      console.log(foo);
+    }
+
+    console.log(foo);
+  </script>
+</body>
