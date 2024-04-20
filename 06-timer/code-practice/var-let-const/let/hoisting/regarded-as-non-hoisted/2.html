@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # let 변수와 호이스팅
+    // - 스코프 시작 지점 ~ 초기화 시작 지점 변수 참조 X => 일시적 사각지대(Temporal Dead Zone; TDZ)
+    // - = let 변수는 변수 호이스팅 발생 안 하는 것처럼 보임 2
+
+    // 일시적 사각지대
+    // console.log(donald); // Uncaught ReferenceError: Cannot access 'donald' before initialization
+
+    // 변수 선언
+    let donald;
+    console.log(donald); // undefined
+
+    // 변수 할당
+    donald = "Super Donald";
+    console.log(donald); // Super Donald
+  </script>
+</body>

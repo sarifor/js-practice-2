@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # let
+    // - 블록 레벨 스코프
+
+    let test2 = 1; // 전역 변수
+
+    {
+      let test2 = 2; // 지역 변수  // 전역 변수 test2와 별개의 변수
+      let test3 = 3; // 지역 변수
+    }
+
+    console.log(test2); // 1
+    console.log(test3); // Uncaught ReferenceError: test3 is not defined
+  </script>
+</body>
