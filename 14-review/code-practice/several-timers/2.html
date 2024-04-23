@@ -8,37 +8,15 @@
     width: 200px; height: 200px;
     background: 'yellow'; overflow: hidden;
   }
-  .gopher, .bomb {
+  .gopher {
     width: 200px; height: 200px; bottom: 0; position: absolute; transition: bottom 1s;
   }
   .gopher {
     background: url('./gopher.png') center center no-repeat;
     background-size: 200px 200px;
   }
-  .dead {
-    background: url('./dead_gopher.png') center center no-repeat;
-    background-size: 200px 200px;
-  }
-  .bomb {
-    background: url('./bomb.png') center center no-repeat;
-    background-size: 200px 200px;
-  }
-  .boom {
-    background: url('./explode.png') center center no-repeat;
-    background-size: 200px 200px;
-  }
   .hidden {
     bottom: -200px;
-  }
-  .hole {
-    width: 200px; height: 150px; position: absolute; bottom: 0;
-    background: url('./mole-hole.png') center center no-repeat;
-    background-size: 200px 150px;
-  }
-  .hole-front {
-    width: 200px; height: 30px; position: absolute; bottom: 0;
-    background: url('./mole-hole-front.png') center center no-repeat;
-    background-size: 200px 30px;
   }
 </style>
 </head>
@@ -63,38 +41,36 @@
   // - xx
 
   const $start = document.querySelector('#start');
-  const $$cells = document.querySelectorAll('.cell');
 
-  const holes = [0];
+  let hole;
   let count = 0;
 
   $start.addEventListener('click', () => {
     setInterval(tick, 1000);
-    // tick();
   });
 
   function tick() {
     count += 1;
-    console.log(`${count}번째 tick`);
+    console.log(`## ${count}번째 tick, hole 값은 ${hole} ##`);
 
-    holes.forEach((hole, index) => { // 사실상 1개
-      console.log(hole, index);
-
-      if (hole) {
-        console.log("returned");
-        return; // 무언가 일어나고 있으면 return -> 보임
-      }
+    if (hole) {
+      console.log(`returned at ${hole}`);
+      return; // 무언가 일어나고 있으면 return -> 보임
+    } else {
+      console.log(`continue at ${hole}`); // undefined
+    }
+    
+    const $gopher = document.querySelector('.gopher');
       
-      const $gopher = $$cells[index].querySelector('.gopher');
-      
-      holes[index] = setTimeout(() => { // 1초 뒤에 안 보임
-        $gopher.classList.add('hidden');
-        holes[index] = 0;
-      }, 1000); 
-      
-      $gopher.classList.remove('hidden'); // 보임
-    });
-  }
+    hole = setTimeout(() => { // 1초 뒤에 안 보임
+      $gopher.classList.add('hidden');
+      console.log(hole, " <- hole = undefined 전");
+      hole = undefined; // "타이머 실행 후 hole 초기화"
+      console.log(hole, " <- hole = undefined 후");
+    }, 1000); 
+    
+    $gopher.classList.remove('hidden'); // 보임
+  };
 </script>
 </body>
 </html>

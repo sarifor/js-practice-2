@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+<style>
+  .elementHidden {
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+  <button id="start">Start</button>
+  <div class="test elementHidden">Hi! Thanks!</div> <!-- 안 보임 -->
+
+  <script>
+    // # 여러 타이머 다루기
+    // - xx
+
+    let count = 0;    
+    let timerId = setTimeout(function tick() {
+      count += 1;
+      console.log(`째깍! count: ${count}, timerId: ${timerId}`); // 여기서 count: 1, timerId: 1이면
+      timerId = setTimeout(tick, 2000);
+      console.log("New: ", count, timerId); // 여기선 count: 1, timerID: 2가 됨
+    }, 2000);
+
+    console.log(timerId);
+  </script>
+</body>
+</html>
