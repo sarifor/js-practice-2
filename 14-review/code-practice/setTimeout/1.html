@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+<style>
+  .elementHidden {
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+  <button id="start">Start</button>
+  <div class="test elementHidden">Hi! Thanks!</div> <!-- 안 보임 -->
+
+  <script>
+    // # Timer
+    // - 버튼 누르면 글자 보였다가 1초 후에 사라지게 하기(setTumeout 이용)
+
+    const $start = document.querySelector('#start');
+
+    // start - tick - hidden add/remove
+    $start.addEventListener('click', () => {
+      tick();
+    })
+
+    function tick() {
+      const $test = document.querySelector('.test');
+      $test.classList.remove('elementHidden'); // 보임
+      setTimeout(() => $test.classList.add('elementHidden'), 1000); // 안 보임
+    }
+  </script>
+</body>
+</html>
