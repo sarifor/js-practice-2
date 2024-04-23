@@ -43,103 +43,56 @@
 </style>
 </head>
 <body>
+
 <div>
-  <span id="timer">8</span>초&nbsp;
-  <span id="score">0</span>점
   <button id="start">시작</button>
 </div>
+
 <div id="game">
+
   <div class="row">
     <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
-    </div>
-    <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
-    </div>
-    <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
+      <div class="gopher hidden"></div> <!-- 안 보임 -->
     </div>
   </div>
-  <div class="row">
-    <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
-    </div>
-    <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
-    </div>
-    <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
-    </div>
-    <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
-    </div>
-    <div class="cell">
-      <div class="hole"></div>
-      <div class="gopher hidden"></div>
-      <div class="bomb hidden"></div>
-      <div class="hole-front"></div>
-    </div>
-  </div>
+
 </div>
+
 <script>
+  // # 여러 타이머 다루기
+  // - xx
+
   const $start = document.querySelector('#start');
   const $$cells = document.querySelectorAll('.cell');
 
-  const holes = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-  let started = false;
+  const holes = [0];
+  let count = 0;
 
   $start.addEventListener('click', () => {
-    if (started) return; // 이미 시작했으면 무시
-    started = true;
-    console.log('시작');
-    const tickId = setInterval(tick, 1000);
-    tick();
+    setInterval(tick, 1000);
+    // tick();
   });
 
   function tick() {
-    holes.forEach((hole, index) => {
+    count += 1;
+    console.log(`${count}번째 tick`);
+
+    holes.forEach((hole, index) => { // 사실상 1개
       console.log(hole, index);
 
       if (hole) {
-        console.log("When hole value exist: ", hole, index);
-        return; // 무언가 일어나고 있으면 return -> 두더지 다시 보이게 함
+        console.log("returned");
+        return; // 무언가 일어나고 있으면 return -> 보임
       }
-
+      
       const $gopher = $$cells[index].querySelector('.gopher');
-      holes[index] = setTimeout(() => { // 1초 뒤에 사라짐
+      
+      holes[index] = setTimeout(() => { // 1초 뒤에 안 보임
         $gopher.classList.add('hidden');
         holes[index] = 0;
       }, 1000); 
-      $gopher.classList.remove('hidden');
+      
+      $gopher.classList.remove('hidden'); // 보임
     });
   }
 </script>
