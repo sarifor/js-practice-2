@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+<style>
+  .elementHidden {
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+  <span id="timer">5</span>초
+
+  <script>
+    // # setTimeout
+    // - 예: alert 함수 사용 시 보통 setTimeout과 함께 호출 (성공 케이스)
+
+    const $timer = document.querySelector('#timer');
+    let time = 5;
+
+    const timerId = setInterval(() => {
+      time = (time * 10 - 1) / 10;
+      $timer.textContent = time;
+      
+      if (time === 0) {
+        clearInterval(timerId);
+        setTimeout(() => { alert("Bye!"); }, 0); // 0초에서 표시됨  // 백그라운드로 타이머의 콜백 함수를 보내는 사이에 화면이 바뀐 덕분
+      }
+    }, 100);
+  </script>
+</body>
+</html>

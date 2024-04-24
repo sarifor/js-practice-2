@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+<style>
+  .elementHidden {
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+  <span id="timer">5</span>초
+
+  <script>
+    // # setTimeout
+    // - 예: alert 함수 사용 시 보통 setTimeout과 함께 호출 (실패 케이스)
+
+    const $timer = document.querySelector('#timer');
+    let time = 5;
+
+    const timerId = setInterval(() => {
+      time = (time * 10 - 1) / 10;
+      $timer.textContent = time;
+      
+      if (time === 0) {
+        clearInterval(timerId);
+        alert("Bye!"); // 0.1초에서 표시됨  // 화면이 움직이는 것을 즉시 멈추고 알림창을 띄워버림
+      }
+    }, 100);
+  </script>
+</body>
+</html>
