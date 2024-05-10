@@ -6,7 +6,9 @@
 
 <body>
   <script>
-    // 함수 이름 O, 괄호 O -> 함수 정의와 동시에 바로 호출 가능
+    // # var 변수 스코프 변경 by 즉시 실행 함수 표현(IIFE): 성공 케이스
+    // - 함수 이름 O, 괄호 O -> 함수 정의와 동시에 바로 호출 가능
+
     (function something() { // 함수 in 괄호 => 표현식
       var message = "hi";
       

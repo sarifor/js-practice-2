@@ -6,10 +6,17 @@
 
 <body>
   <script>
-    // for 문(코드 블록) 안의 var
-    for (var i = 0; i < 10; i++) {
-      //
+    // # var: 함수 스코프
+    // - var 변수 in 코드 블록 in 함수 -> 함수 밖에서 접근할 수 없음
+
+    function sayKonnichiwa() {
+      if (true) {
+        var aisatsu = "Konnichiwa";
+      }
+      alert(aisatsu);
     }
-    alert(i); // 10  // var 변수에는 for 문이 끝났어도 접근 가능
+
+    sayKonnichiwa(); // Konnichiwa
+    alert(aisatsu); // Uncaught ReferenceError: aisatsu is not defined
   </script>
 </body>

@@ -6,7 +6,9 @@
 
 <body>
   <script>
-    // 함수 이름 X, 괄호 X -> 에러 발생
+    // # var 변수 스코프 변경 by 즉시 실행 함수 표현(IIFE): 실패 케이스 1
+    // - 함수 이름 X, 괄호 X -> 에러 발생
+
     function() { // Uncaught SyntaxError: Function statements require a function name
       var message = "Hi";
 

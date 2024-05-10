@@ -6,14 +6,16 @@
 
 <body>
   <script>
-    // var 선언 in 함수 -> 함수 시작될 때 처리됨
+    // # var: 호이스팅
+    // - var 선언 in 함수 -> 함수 시작될 때 처리됨
+    
     function sayBye() {
       phrase = "Byebye";
       
-      alert(phrase);
+      alert(phrase); // Byebye
 
       var phrase; // 함수 맨 위로 이동한 것처럼 동작
     }
-    sayBye(); // Byebye
+    sayBye();
   </script>
 </body>

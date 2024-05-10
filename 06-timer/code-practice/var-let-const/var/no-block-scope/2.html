@@ -6,16 +6,12 @@
 
 <body>
   <script>
-    // if 문(코드 블록) 안의 var
-    if (true) {
-      var test = true;
-    }
-    alert(test); // var 변수에는 if 문이 끝났어도 접근 가능
+    // var: 함수 스코프
+    // - for 문(코드 블록) 안의 var 변수 -> for 문이 끝났어도 접근 가능
 
-    // CF) if 문 안의 let
-    if (true) {
-      let test2 = false;
+    for (var i = 0; i < 10; i++) {
+      //
     }
-    alert(test2); // Uncaught ReferenceError: test2 is not defined
+    alert(i); // 10
   </script>
 </body>
