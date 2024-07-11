@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # 배열
+
+    // Arrays
+    const fruits = ['apple', 'orange', 'banana', 'dragon fruits'];
+    console.log(fruits[0]); // apple
+
+    const a = 10;
+    const b = 20;
+    const variableArray = [a, b, 30];
+    console.log(variableArray[0]); // 10
+
+    const duplicated = ["a", "a", "a"];
+    console.log(duplicated[1]);
+
+
+    // Add a new element to array
+    const target = ['a', 'i', 'u', 'e', 'o'];
+    target.unshift('un');
+    console.log(target); // [ 'un', 'a', 'i', 'u', 'e', 'o' ]
+    target.push('ka');
+    console.log(target); // [ 'un', 'a', 'i', 'u',  'e', 'o', 'ka' ]
+
+
+    // const
+    const target2 = ['ka', 'ki', 'ku'];
+    // target2 = ['ke', 'ko']; // TypeError: Assignment to constant variable.
+    target2[3] = 'ke';
+    console.log(target2); // [ 'ka', 'ki', 'ku', 'ke' ]
+
+
+    // Take an element from array
+    const target3 = ['sa', 'si', 'su'];
+
+    target3.pop(); // take an element from the end
+    console.log(target3); // [ 'sa', 'si' ]
+
+    target3.shift(); // remove the first element
+    console.log(target3); // [ 'si' ]
+
+    const target4 = ['ta', 'chi', 'tsu', 'te', 'to'];
+    target4.splice(2, 1);
+    console.log(target4); // [ 'ta', 'chi', 'te', 'to' ]
+
+
+    // Find a specific element
+    const target5 = ['na', 'ni', 'nu', 'ne', 'no'];
+
+    const result = target5.includes('na');
+    console.log(result); // true
+
+    const result2 = target5.indexOf('ni');
+    console.log(result2); // 1
+
+
+    // Iterate over an array
+    const target6 = ['sky', 'prizm', 'wing', 'butterfly'];
+    for (let x = 0; x < target6.length; x++) {
+      console.log(target6[x]);
+    }
+
+
+    // Remove 'ra'
+    const arr = ['ga', 'ra', 'da', 'ra', 'ma', 'ra'];
+    let index3 = arr.indexOf('ra');
+    while(index3 > -1) {
+      arr.splice(index3, 1);
+      index3 = arr.indexOf('ra');
+    }
+    console.log(arr);
+  </script>
+</body>
+</html>

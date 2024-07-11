@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # 빈 값 사용하기
+
+    // undefined
+    console.log(Boolean(undefined)); // false
+    console.log(undefined == false); // false
+    console.log(undefined == 0); // false
+    console.log(undefined == ''); // false
+    console.log(typeof undefined); // undefined
+
+    // null
+    console.log(undefined == null); // true
+    console.log(undefined === null); // false
+    console.log(null == false); // false
+    console.log(null == 0); // false
+    console.log(null == ''); // false
+    console.log(typeof null); // object // should have been 'null'
+  </script>
+</body>
+</html>

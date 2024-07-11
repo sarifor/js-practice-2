@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # 함수
+
+    // Functions
+    function e() { console.log('It\'s e!') } // function declaration statement
+    const f = function() {}; // function expression
+    const g = () => {}; // arrow function
+
+    e();
+    e();
+
+
+    // Return value
+    function h() { 
+      console.log('It\'s h!');
+    }
+    let j = h();
+    console.log(j); // undefined
+
+    function m() {
+      console.log('It\'s m!');
+      return undefined;
+    }
+    let k = m();
+    console.log(k); // undefined
+
+    function i() { 
+      console.log('It\'s h!');
+      return 'h';
+    }
+    j = i();
+    console.log(j); // h
+
+    function test() {
+      console.log("koncha");
+      return;
+      console.log("Ossu");
+    }
+    test(); // koncha
+
+    function test2() {
+      if (false) {
+        return;
+      }
+      console.log('executed');
+    }
+    test2(); // executed
+
+
+    // Argument, parameter
+    function test3(parameter) {
+      console.log(parameter); // argument
+    }
+    test3('argument');
+
+    function test4(param1, param2, param3) {
+      console.log(param1, param2, param3); // arg1 arg2 undefined
+      console.log(arguments); // [Arguments] { '0': 'arg1', '1': 'arg2' }
+    }
+    test4('arg1', 'arg2');
+
+
+    // Multiply function
+    const multiply = (x, y, z) => {
+      return x * y * z
+    };
+    console.log(multiply(1, 2, 3)); // 6
+
+
+    // Use another variables in functions
+    function minus1(x, y) {
+      const a1 = 100; // new variable can be declared in functions
+      return (x - y) * a1;
+    }
+    console.log(minus1(5, 3)); // 200
+
+
+    // Use another variables outside functions
+    const a2 = 100;
+    function minus2(x, y) {
+      return (x - y) * a2;
+    }
+    console.log(minus2(5, 3)); // 200
+  </script>
+</body>
+</html>

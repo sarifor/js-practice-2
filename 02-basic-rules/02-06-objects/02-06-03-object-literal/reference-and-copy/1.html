@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # 참조와 복사
+
+    const a4 = { name: 'teacher' };
+    const b4 = a4; // refer to object
+    a4.name = 'student';
+    console.log(b4.name); // student // Variable a4 and b4 refer to the same object.
+
+    let a5 = 'July';
+    let b5 = a5; // refer to not object
+    a5 = 'August';
+    console.log(b5); // July // Copied
+  </script>
+</body>
+</html>

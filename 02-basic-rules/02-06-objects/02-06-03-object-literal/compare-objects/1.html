@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # 객체 간 비교하기
+
+    console.log({} === {}); // false
+    console.log('str' === 'str'); // true
+    console.log(123 === 123); // true
+    console.log(false === false); // true
+    console.log(null === null); // true
+    console.log(undefined === undefined); // true
+
+    const abc = { name: 'abcdesu' };
+    const array = [1, 2, abc];
+    console.log(({ name: 'abcdesu' } === array[2])); // false
+    console.log((abc === array[2])); // true // Compare objects using variables
+  </script>
+</body>
+</html>
