@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # 참조와 복사 (2)
+    // - 참조: '객체'를 저장한 변수를 다른 변수에 대입하면 참조 관계가 생김
+    // - 복사: '객체가 아닌 값'은 참조 관계 생기지 않음
+
+    // 참조
+    const manga = { author: 'Y.T.'};
+    const comics = manga;
+
+    manga.author = "Yoshihiro Togashi";
+    console.log(comics.author); // Yoshihiro Togashi
+    
+
+    // 복사
+    let book = "Hunter x Hunter";
+    let book2 = book;
+    
+    book = "SlanDunk";
+    console.log(book2); // Hunter x Hunter
+  </script>
+</body>
+</html>
