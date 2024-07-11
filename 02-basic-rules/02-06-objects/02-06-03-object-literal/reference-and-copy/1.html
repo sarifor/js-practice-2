@@ -9,11 +9,13 @@
   <script>
     // # 참조와 복사
 
+    // 참조
     const a4 = { name: 'teacher' };
     const b4 = a4; // refer to object
     a4.name = 'student';
     console.log(b4.name); // student // Variable a4 and b4 refer to the same object.
 
+    // 복사
     let a5 = 'July';
     let b5 = a5; // refer to not object
     a5 = 'August';
