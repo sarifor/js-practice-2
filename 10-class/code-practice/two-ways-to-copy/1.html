@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Practice</title>
+</head>
+
+<body>
+  <script>
+    // # 얕은 복사
+    // - 객체를 프로퍼티 값으로 갖는 객체를, 한 단계까지만 복사하는 것. 객체에 중첩되어 있는 객체는 참조 값을 복사
+    // - 혹은 객체를 할당한 변수를 다른 변수에 할당하는 것.
+    // - 얕은 복사를 할 때는 ... 연산자 사용. 기존 객체의 속성을 새 객체에 할당
+
+    // 스프레드 연산자로 얕은 복사
+    const cart = { cookie: { favorite: "pokky", love: "chocochip" }, ramen: "shinramen" };
+    const cart2 = { ...cart };
+    console.log(cart === cart2); // true  // (가장 바깥의) 한 단계까지만 복사됨
+    console.log(cart.cookie === cart2.cookie); // false
+
+    // 스프레드 연산자로 얕은 복사하고, cookie.favorite만 업데이트
+    const cart3 = { ...cart, cookie: { ...cart.cookie, favorite: "cake" } }; 
+    console.log(cart3); // { cookie: { favorite: "cake", love: "chocochip"}, ramen: "shinramen" }
+   </script>
+</body>
+</html>
